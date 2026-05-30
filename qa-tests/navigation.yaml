@@ -1,16 +1,14 @@
 name: Navigation Links
-description: Validates that all navigation links are functional
+description: Validates that navigation links and page transitions work
 tags:
   - navigation
   - functional
 app_config: b76ece5b-940d-4d4e-ac79-6cccfce2106e
 severity: high
 priority: high
-variables:
-  base_url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com
 steps:
   - action: goto
-    url: $base_url
+    url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com/
   - action: to_be_visible
     target: Página principal
   - action: to_be_visible

@@ -6,11 +6,9 @@ tags:
 app_config: b76ece5b-940d-4d4e-ac79-6cccfce2106e
 severity: low
 priority: low
-variables:
-  base_url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com
 steps:
   - action: goto
-    url: $base_url
+    url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com/
   - action: to_contain_text
     target: .footer
     value: "+593 989 448 049"

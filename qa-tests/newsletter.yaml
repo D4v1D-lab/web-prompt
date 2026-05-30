@@ -1,16 +1,14 @@
 name: Newsletter Subscription
-description: Validates that the newsletter subscription form works
+description: Validates that the newsletter subscription form is present and works
 tags:
   - newsletter
   - functional
 app_config: b76ece5b-940d-4d4e-ac79-6cccfce2106e
 severity: medium
 priority: medium
-variables:
-  base_url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com
 steps:
   - action: goto
-    url: $base_url
+    url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com/
   - action: to_be_visible
     target: Subscríbete a nuestros boletines
   - action: fill

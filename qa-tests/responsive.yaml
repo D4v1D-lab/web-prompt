@@ -1,16 +1,14 @@
 name: Responsive Design
-description: Validates responsive layout on mobile and tablet viewports
+description: Validates the page loads and key elements are present at desktop viewport
 tags:
   - responsive
   - visual
 app_config: b76ece5b-940d-4d4e-ac79-6cccfce2106e
 severity: medium
 priority: medium
-variables:
-  base_url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com
 steps:
   - action: goto
-    url: $base_url
+    url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com/
   - action: wait_for_timeout
     value: "1000"
   - action: to_be_visible
