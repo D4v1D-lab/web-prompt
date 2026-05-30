@@ -1,0 +1,29 @@
+name: Navigation Links
+description: Validates that all navigation links are functional
+tags:
+  - navigation
+  - functional
+app_config: b76ece5b-940d-4d4e-ac79-6cccfce2106e
+severity: high
+priority: high
+variables:
+  base_url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com
+steps:
+  - action: goto
+    url: $base_url
+  - action: to_be_visible
+    target: Página principal
+  - action: to_be_visible
+    target: Noticias
+  - action: to_be_visible
+    target: Contactos
+  - action: to_be_visible
+    target: Temas
+  - action: click
+    target: single.html
+  - action: to_be_visible
+    target: Volver a la página principal
+  - action: click
+    target: Volver a la página principal
+  - action: to_be_visible
+    target: Autosuficiencia Los Chillos

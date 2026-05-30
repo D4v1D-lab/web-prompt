@@ -1,0 +1,31 @@
+name: Footer Content
+description: Validates email, phone, and social media information in the footer
+tags:
+  - footer
+  - content
+app_config: b76ece5b-940d-4d4e-ac79-6cccfce2106e
+severity: low
+priority: low
+variables:
+  base_url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com
+steps:
+  - action: goto
+    url: $base_url
+  - action: to_contain_text
+    target: .footer
+    value: "+593 989 448 049"
+  - action: to_contain_text
+    target: .footer
+    value: centroserecursosloschillos@gmail.com
+  - action: to_contain_text
+    target: .footer
+    value: facebook.com/autosuficiencia.loschillos
+  - action: to_contain_text
+    target: .footer
+    value: "Diseñado por David Martínez"
+  - action: to_be_visible
+    target: "¿Quienes somos?"
+  - action: to_be_visible
+    target: Empleo
+  - action: to_be_visible
+    target: Quick links

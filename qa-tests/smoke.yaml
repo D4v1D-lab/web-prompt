@@ -1,0 +1,30 @@
+name: Smoke Test
+description: Verifies that the page loads correctly and key elements are present
+tags:
+  - smoke
+  - critical
+app_config: b76ece5b-940d-4d4e-ac79-6cccfce2106e
+severity: critical
+priority: urgent
+variables:
+  base_url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com
+steps:
+  - action: goto
+    url: $base_url
+  - action: to_be_visible
+    target: Autosuficiencia Los Chillos
+  - action: to_be_visible
+    target: Página principal
+  - action: to_be_visible
+    target: Noticias
+  - action: to_be_visible
+    target: Contactos
+  - action: to_be_visible
+    target: Publicaciones de interes
+  - action: to_be_visible
+    target: Contenido reciente
+  - action: to_be_visible
+    target: Buscar
+  - action: to_contain_text
+    target: Centro de Recursos y Autosuficiencia
+    value: Diseñado por David Martínez

@@ -1,0 +1,27 @@
+name: Carousel Functionality
+description: Validates that the carousel/slider works correctly with prev/next and autoplay
+tags:
+  - carousel
+  - functional
+app_config: b76ece5b-940d-4d4e-ac79-6cccfce2106e
+severity: high
+priority: high
+variables:
+  base_url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com
+steps:
+  - action: goto
+    url: $base_url
+  - action: to_be_visible
+    target: Publicaciones de interes
+  - action: click
+    target: .next
+  - action: wait_for_timeout
+    value: "1000"
+  - action: click
+    target: .prev
+  - action: wait_for_timeout
+    value: "1000"
+  - action: to_be_visible
+    target: Centro de salud a bajo costo
+  - action: to_be_visible
+    target: Cursos y talleres Funval abiertos

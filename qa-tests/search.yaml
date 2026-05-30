@@ -1,0 +1,20 @@
+name: Search Functionality
+description: Validates that the search form accepts input and filters content
+tags:
+  - search
+  - functional
+app_config: b76ece5b-940d-4d4e-ac79-6cccfce2106e
+severity: medium
+priority: medium
+variables:
+  base_url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com
+steps:
+  - action: goto
+    url: $base_url
+  - action: to_be_visible
+    target: Buscar
+  - action: fill
+    target: Buscar...
+    value: becas
+  - action: to_be_visible
+    target: La Senescyt ofrece Becas
