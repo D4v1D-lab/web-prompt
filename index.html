@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Autosuficiencia Los Chillos - Centro de Recursos y Autosuficiencia. Información sobre empleo, educación, medicina y emprendimiento para la comunidad.">
+    <meta name="keywords" content="autosuficiencia, los chillos, empleo, educación, medicina, emprendimiento, recursos, comunidad">
+    <meta property="og:title" content="Autosuficiencia Los Chillos">
+    <meta property="og:description" content="Centro de Recursos y Autosuficiencia Los Chillos. Información para la comunidad.">
+    <meta property="og:type" content="website">
     <!--fonts-->
     <script src="https://kit.fontawesome.com/034d3f2a55.js" crossorigin="anonymous"></script>
     <!-- Google fonts 1-->
@@ -29,18 +34,18 @@
         </div>
         <i class="fa fa-bars menu-toggle"></i>
         <ul class="nav">
-            <li><a href="">Página principal</a></li>
-            <li><a href="">Noticias</a></li>
-            <li><a href="">Contactos</a></li>
-            <li><a href="">Temas
+            <li><a href="index.html">Página principal</a></li>
+            <li><a href="#noticias">Noticias</a></li>
+            <li><a href="#contactos">Contactos</a></li>
+            <li><a href="#">Temas
                     <i class="fa fa-chevron-down" style="font-size: 0.5em;"></i>
                 </a>
                 <ul>
-                    <li><a href="" style="font-size: 0.75em;">Educación</a></li>
-                    <li><a href="" style="font-size: 0.75em;">Empleo</a></li>
-                    <li><a href="" style="font-size: 0.75em;">Emprender</a></li>
-                    <li><a href="" style="font-size: 0.75em;">Medicina</a></li>
-                    <li><a href="" style="font-size: 0.75em;">Testimonios</a></li>
+                    <li><a href="#educacion" style="font-size: 0.75em;">Educación</a></li>
+                    <li><a href="#empleo" style="font-size: 0.75em;">Empleo</a></li>
+                    <li><a href="#emprender" style="font-size: 0.75em;">Emprender</a></li>
+                    <li><a href="#medicina" style="font-size: 0.75em;">Medicina</a></li>
+                    <li><a href="#testimonios" style="font-size: 0.75em;">Testimonios</a></li>
                 </ul>
             </li>
         </ul>
@@ -48,7 +53,7 @@
     <!-- Page Content -->
     <div class="page-content">
         <!-- Slider -->
-        <div class="post-slider">
+        <div class="post-slider" id="noticias">
             <h2 class="slider-title" style="color: rgb(6, 147, 194); font-weight: 2000;"> Publicaciones de interes</h2>
             <i class="fas fa-chevron-left prev"></i>
             <i class="fas fa-chevron-right next"></i>
@@ -105,13 +110,13 @@
                         <img src="images/beca.jpg">
                     </div>
                     <div class="post-preview">
-                        <h2><a href="" style="margin-left: 5px;" class="recent-post-title">La Senescyt ofrece Becas</a>
+                        <h2><a href="single.html" style="margin-left: 5px;" class="recent-post-title">La Senescyt ofrece Becas</a>
                         </h2>
                         <i class="far fa-calendar" style="font-size: x-small; margin-left: 5px" ;> Sep 9,2024</i>
                         <p class="preview-text" style="margin-left: 2px;">
                             Forma parte de las becas que está ofreciendo el estado
                         </p>
-                        <a href="http://" class="btn" style="margin-left: 5px;">Leer mas...</a>
+                        <a href="single.html" class="btn" style="margin-left: 5px;">Leer mas...</a>
                     </div>
                 </div>
 
@@ -120,13 +125,13 @@
                         <img src="images/horario.jpg">
                     </div>
                     <div class="post-preview">
-                        <h2><a href="" style="margin-left: 5px;" class="recent-post-title">Inscripciones de instituto
+                        <h2><a href="single.html" style="margin-left: 5px;" class="recent-post-title">Inscripciones de instituto
                                 abiertas</a></h2>
                         <i class="far fa-calendar" style="font-size: x-small; margin-left: 5px" ;> Sep 15,2024</i>
                         <p class="preview-text" style="margin-left: 2px;">
                             Descubre como inscribirte a instituto de forma virtual
                         </p>
-                        <a href="http://" class="btn" style="margin-left: 5px;">Leer mas...</a>
+                        <a href="single.html" class="btn" style="margin-left: 5px;">Leer mas...</a>
                     </div>
                 </div>
 
@@ -135,13 +140,13 @@
                         <img src="images/nuevo.jpg">
                     </div>
                     <div class="post-preview">
-                        <h2><a href="" style="margin-left: 5px;" class="recent-post-title">Nuevo horario del Centro de
+                        <h2><a href="single.html" style="margin-left: 5px;" class="recent-post-title">Nuevo horario del Centro de
                                 Recursos</a></h2>
                         <i class="far fa-calendar" style="font-size: x-small; margin-left: 5px;"> Sep 30,2024</i>
                         <p class="preview-text" style="margin-left: 2px;">
                             Acaba de abrirse un nuevo horario de atención el día Domingo en las mañanas
                         </p>
-                        <a href="http://" class="btn" style="margin-left: 5px;">Leer mas...</a>
+                        <a href="single.html" class="btn" style="margin-left: 5px;">Leer mas...</a>
                     </div>
                 </div>
             </div>
@@ -201,7 +206,7 @@
                 <h2>Subscríbete a nuestros boletines</h2>
                 <form action="index.html" method="post">
                     <input type="text" name="subs-term" class="text-input" placeholder="Correo electrónico..."> <br>
-                    <a href="http://" class="btn"><i class="fas fa-envelope" style="margin-right: 4px;"></i>Subscribirse</a> 
+                    <button type="submit" class="btn"><i class="fas fa-envelope" style="margin-right: 4px;"></i>Subscribirse</button> 
                 </form>
             </div>
 

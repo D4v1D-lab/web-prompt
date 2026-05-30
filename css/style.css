@@ -18,6 +18,9 @@ a{
     color: white;
     border: 1px solid transparent;
     border-radius: .25rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
 }
  
 h1{
@@ -30,7 +33,7 @@ h2,h3,h4,h5{
 .text-input {
     border-radius: 5px;
     box-shadow: 1px 2px rgba(0, 0, 0, 0.5);
-    width: 100½;
+    width: 100%;
     line-height: 1.5em;
 }
 
@@ -43,9 +46,8 @@ header {
 
 body, html {
     height: 100%;
-    padding: 0 px;
+    padding: 0px;
     margin: 0px;
-    height: 60px;
     background: rgb(254, 254, 220);
 }
 
@@ -223,11 +225,6 @@ header * {
    padding: 5px;
    float: right;
    background: white;
-}
-
-.btn{
-    position: absolute;
-
 }
 
 .btn:hover{
