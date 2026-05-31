@@ -84,9 +84,10 @@
     "titulo": "FPE Fondo Perpetuo para la educación",
     "fecha": "Mayo 31, 2026",
     "resumen": "Instrucciones para aplicar al fondo perpetuo.",
-    "contenido": "<p>El Fondo Perpetuo para la Educación es un programa que ofrece préstamos educativos para que las personas puedan estudiar una carrera, especialización u otros programas de formación cuando no cuentan con los recursos económicos suficientes.\n\n¿A quiénes puede ayudar?\n\nEstudiantes de bajos o medianos ingresos.\nPersonas que desean continuar o mejorar sus estudios.\nQuienes necesitan apoyo financiero para cubrir costos educativos.\n\n¿Cómo funciona el préstamo?\n\nEl fondo presta dinero para pagar estudios y, en algunos casos, materiales o gastos relacionados.\nEl estudiante utiliza el dinero para su educación.\nUna vez finalizados los estudios (o según las condiciones del programa), el beneficiario devuelve el dinero en cuotas.\nLos pagos realizados permiten que el fondo siga ayudando a nuevos estudiantes, por eso se llama “perpetuo”.\n\nEn resumen, es un sistema de préstamos educativos que ayuda a financiar estudios y se mantiene gracias a la devolución de los préstamos por parte de los beneficiarios.\n\nMás información: https://sudamericanoroeste.laiglesiadejesucristo.org/fpe</p>",
-    "imagen": "images/FPE.png",
-    "categoria": "educación",
-    "destacado": false
+    "contenido": "<p>El Fondo Perpetuo para la Educación es un programa que ofrece préstamos educativos para que las personas puedan estudiar una carrera, especialización u otros programas de formación cuando no cuentan con los recursos económicos suficientes.</p><p><strong>¿A quiénes puede ayudar?</strong></p><ul><li>Estudiantes de bajos o medianos ingresos.</li><li>Personas que desean continuar o mejorar sus estudios.</li><li>Quienes necesitan apoyo financiero para cubrir costos educativos.</li></ul><p><strong>¿Cómo funciona el préstamo?</strong></p><ol><li>El fondo presta dinero para pagar estudios y, en algunos casos, materiales o gastos relacionados.</li><li>El estudiante utiliza el dinero para su educación.</li><li>Una vez finalizados los estudios (o según las condiciones del programa), el beneficiario devuelve el dinero en cuotas.</li><li>Los pagos realizados permiten que el fondo siga ayudando a nuevos estudiantes, por eso se llama &quot;perpetuo&quot;.</li></ol><p>En resumen, es un sistema de préstamos educativos que ayuda a financiar estudios y se mantiene gracias a la devolución de los préstamos por parte de los beneficiarios.</p>",
+    "imagen": "images/FP.png",
+    "categoria": "educacion",
+    "destacado": false,
+    "informacion": "https://sudamericanoroeste.laiglesiadejesucristo.org/fpe"
   }
 ]

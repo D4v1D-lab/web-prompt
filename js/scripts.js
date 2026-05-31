@@ -129,6 +129,11 @@ function renderArticle(articulos) {
     '<i class="far fa-calendar" style="font-size: small; color: rgb(6, 147, 194); margin-bottom: 20px; display: block;"> ' + articulo.fecha + '</i>' +
     '<img src="' + articulo.imagen + '" alt="' + articulo.titulo + '" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 5px; margin-bottom: 20px;">' +
     '<div style="color: #333; line-height: 1.8; font-family: \'Josefin Sans\', sans-serif;">' + articulo.contenido + '</div>' +
+    (articulo.informacion ? '<div style="margin-top: 25px; padding: 15px; background: #f0f8fb; border-left: 4px solid rgb(6, 147, 194); border-radius: 3px; font-family: \'Josefin Sans\', sans-serif;">' +
+      '<i class="fas fa-external-link-alt" style="color: rgb(6, 147, 194); margin-right: 8px;"></i>' +
+      '<strong style="color: rgb(6, 147, 194);">Para más información:</strong> ' +
+      '<a href="' + articulo.informacion + '" target="_blank" rel="noopener" style="color: rgb(6, 147, 194); word-break: break-all;">' + articulo.informacion + '</a>' +
+    '</div>' : '') +
     '<div style="margin-top: 30px;"><a href="index.html" class="btn">Volver a la página principal</a></div>' +
     '</article>';
 
