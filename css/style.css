@@ -282,13 +282,14 @@ color: black;
 }
 
 .footer .btn{
-    background: rgb(254, 254, 220);
+    background: black;
     margin: 0px;
-    color: rgb(6, 147, 194);
+    color: white;
 }
 
 .footer .btn:hover{
-background: black;
+background: rgb(254, 254, 220);
+color: rgb(6, 147, 194);
 }
 
 .footer .footer-content{
@@ -310,6 +311,7 @@ background: black;
 
 .footer .footer-content .section .text-input {
     border: none;
+    width: 50%;
 }
 
 .footer .footer-content ul li {
