@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -20,10 +20,12 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- Script -->
-    <script src="js/scripts.js"></script>
     <!-- Slick carousel -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Slick CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <!-- Script -->
+    <script src="js/scripts.js"></script>
     <title>Blog</title>
 </head>
 
@@ -57,98 +59,12 @@
             <h2 class="slider-title" style="color: rgb(6, 147, 194); font-weight: 2000;"> Publicaciones de interes</h2>
             <i class="fas fa-chevron-left prev"></i>
             <i class="fas fa-chevron-right next"></i>
-            <div class="posts">
-                <div class="single-post">
-                    <img src="images/humana2a.jpg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.html" style="margin-left: 5px;">Centro de salud a bajo costo</a></h4>
-                        <i class="far fa-calendar" style="font-size: x-small; margin-left: 5px;"> Sep 1, 2024</i>
-                    </div>
-                </div>
-
-                <div class="single-post">
-                    <img src="images/funval.jpg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.html" style="margin-left: 5px;">Cursos y talleres Funval abiertos</a></h4>
-                        <i class="far fa-calendar" style="font-size: x-small; margin-left: 5px;"> Sep 5, 2024</i>
-                    </div>
-                </div>
-
-                <div class="single-post">
-                    <img src="images/partido.jpg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.html" style="margin-left: 5px;">Partido Ecuador vs Brasil en institutos</a>
-                        </h4>
-                        <i class="far fa-calendar" style="font-size: x-small; margin-left: 5px;"> Sep 6, 2024</i>
-                    </div>
-                </div>
-
-                <div class="single-post">
-                    <img src="images/nh.jpg" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.html" style="margin-left: 5px;">Noche de hogar en institutos Colón</a></h4>
-                        <i class="far fa-calendar" style="font-size: x-small; margin-left: 5px;"> Sep 7, 2024</i>
-                    </div>
-                </div>
-
-                <div class="single-post">
-                    <img src="images/hotliner.png" alt="" class="slider-image">
-                    <div class="post-info">
-                        <h4><a href="single.html" style="margin-left: 5px;">Teléfono de la esperanza</a></h4>
-                        <i class="far fa-calendar" style="font-size: x-small; margin-left: 5px;"> Dic 6, 2024</i>
-                    </div>
-                </div>
-
-            </div>
+            <div class="posts"></div>
         </div>
         <!-- contenido reciente -->
         <div class="main clear">
             <div class="recent">
                 <h1 class="recent-title">Contenido reciente</h1>
-                <div class="recent-post clear">
-                    <div class="recent-image">
-                        <img src="images/beca.jpg">
-                    </div>
-                    <div class="post-preview">
-                        <h2><a href="single.html" style="margin-left: 5px;" class="recent-post-title">La Senescyt ofrece Becas</a>
-                        </h2>
-                        <i class="far fa-calendar" style="font-size: x-small; margin-left: 5px" ;> Sep 9,2024</i>
-                        <p class="preview-text" style="margin-left: 2px;">
-                            Forma parte de las becas que está ofreciendo el estado
-                        </p>
-                        <a href="single.html" class="btn" style="margin-left: 5px;">Leer mas...</a>
-                    </div>
-                </div>
-
-                <div class="recent-post clear">
-                    <div class="recent-image">
-                        <img src="images/horario.jpg">
-                    </div>
-                    <div class="post-preview">
-                        <h2><a href="single.html" style="margin-left: 5px;" class="recent-post-title">Inscripciones de instituto
-                                abiertas</a></h2>
-                        <i class="far fa-calendar" style="font-size: x-small; margin-left: 5px" ;> Sep 15,2024</i>
-                        <p class="preview-text" style="margin-left: 2px;">
-                            Descubre como inscribirte a instituto de forma virtual
-                        </p>
-                        <a href="single.html" class="btn" style="margin-left: 5px;">Leer mas...</a>
-                    </div>
-                </div>
-
-                <div class="recent-post clear">
-                    <div class="recent-image">
-                        <img src="images/nuevo.jpg">
-                    </div>
-                    <div class="post-preview">
-                        <h2><a href="single.html" style="margin-left: 5px;" class="recent-post-title">Nuevo horario del Centro de
-                                Recursos</a></h2>
-                        <i class="far fa-calendar" style="font-size: x-small; margin-left: 5px;"> Sep 30,2024</i>
-                        <p class="preview-text" style="margin-left: 2px;">
-                            Acaba de abrirse un nuevo horario de atención el día Domingo en las mañanas
-                        </p>
-                        <a href="single.html" class="btn" style="margin-left: 5px;">Leer mas...</a>
-                    </div>
-                </div>
             </div>
             <div class="side-bar">
                 <div class="section search">
@@ -183,8 +99,7 @@
         <div class="footer-content">
             <div class="section about">
                 <h2 class="text-logo"><span>Autosuficiencia</span> Los Chillos </h2>
-                <p>Somos una organización sin fines de lucro que trabaja voluntariamente. 
-                    Este no es un sitio oficial de la Iglesia de Jesucristo de los Santos de los Últimos Días au</p>
+                <p>Somos una organización sin fines de lucro que trabaja para la Iglesia de Jesucristo de Los Santos de Los Últimos Días. Este es un sitio no oficial de la iglesia hecho por miembros de la iglesia para ayudar a la comunidad</p>
                 <span><i class="fas fa-phone"></i> &nbsp;+593 989 448 049</span> <br>
                 <span><i class="fas fa-envelope"></i> &nbsp;centroserecursosloschillos@gmail.com</span> <br>
                 <span><i class="fab fa-facebook-f"></i> &nbsp;facebook.com/autosuficiencia.loschillos</span>

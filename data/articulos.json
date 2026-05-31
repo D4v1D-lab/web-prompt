@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "titulo": "Centro de salud a bajo costo",
+    "fecha": "Sep 1, 2024",
+    "resumen": "Atención médica accesible para la comunidad de Los Chillos.",
+    "contenido": "<p>El nuevo centro de salud ofrece consultas médicas generales, odontología y psicología a precios accesibles para la comunidad de Los Chillos. Está ubicado en el centro del valle y atiende de lunes a viernes de 8:00 a 17:00.</p><p>Los servicios incluyen medicina general, control de signos vitales, curaciones, y charlas de prevención en salud. No se requiere cita previa para consultas generales.</p>",
+    "imagen": "images/humana2a.jpg",
+    "categoria": "medicina",
+    "destacado": true
+  },
+  {
+    "id": 2,
+    "titulo": "Cursos y talleres Funval abiertos",
+    "fecha": "Sep 5, 2024",
+    "resumen": "Fundación Funval abre inscripciones para cursos gratuitos de formación técnica.",
+    "contenido": "<p>La Fundación Funval ha abierto inscripciones para nuevos cursos de formación técnica en áreas como electricidad, costura, cocina y atención al cliente. Los cursos son completamente gratuitos y están dirigidos a personas mayores de 18 años.</p><p>Las clases inician en octubre y tienen una duración de 3 meses. Los talleres incluyen material didáctico y certificado de participación avalado por la fundación.</p>",
+    "imagen": "images/funval.jpg",
+    "categoria": "educacion",
+    "destacado": true
+  },
+  {
+    "id": 3,
+    "titulo": "Partido Ecuador vs Brasil en institutos",
+    "fecha": "Sep 6, 2024",
+    "resumen": "Transmisión del partido eliminatorio en los institutos de la zona.",
+    "contenido": "<p>Los institutos de la Estaca Los Chillos invitan a la comunidad a la transmisión del partido Ecuador vs Brasil por las eliminatorias sudamericanas. Se instalará pantalla gigante en el salón cultural del instituto Colón.</p><p>El evento comienza a las 14:00. Habrá venta de comida típica y bebidas. La entrada es libre y se recomienda llegar con anticipación para asegurar un buen lugar.</p>",
+    "imagen": "images/partido.jpg",
+    "categoria": "noticias",
+    "destacado": true
+  },
+  {
+    "id": 4,
+    "titulo": "Noche de hogar en institutos Colón",
+    "fecha": "Sep 7, 2024",
+    "resumen": "Noche de hogar especial para familias y jóvenes en el instituto Colón.",
+    "contenido": "<p>Se invita a todas las familias y jóvenes solteros de la Estaca Los Chillos a participar en la noche de hogar especial que se realizará en el instituto Colón. La actividad incluirá juegos, reflexiones y una merienda compartida.</p><p>El evento inicia a las 18:30 y se extiende hasta las 20:30. Se solicita a los asistentes traer un plato de comida para compartir entre todos los participantes.</p>",
+    "imagen": "images/nh.jpg",
+    "categoria": "noticias",
+    "destacado": true
+  },
+  {
+    "id": 5,
+    "titulo": "Teléfono de la esperanza",
+    "fecha": "Dic 6, 2024",
+    "resumen": "Línea de ayuda y apoyo emocional disponible para la comunidad.",
+    "contenido": "<p>El Teléfono de la Esperanza es un servicio gratuito de apoyo emocional y prevención del suicidio que atiende las 24 horas del día, los 7 días de la semana. Profesionales capacitados escuchan y brindan orientación de manera confidencial.</p><p>Si usted o alguien que conoce está pasando por una situación difícil, no dude en llamar. No está solo. La ayuda está a una llamada de distancia.</p>",
+    "imagen": "images/hotliner.png",
+    "categoria": "medicina",
+    "destacado": true
+  },
+  {
+    "id": 6,
+    "titulo": "La Senescyt ofrece Becas",
+    "fecha": "Sep 9, 2024",
+    "resumen": "Forma parte de las becas que está ofreciendo el estado.",
+    "contenido": "<p>La Secretaría de Educación Superior, Ciencia, Tecnología e Innovación (Senescyt) ha abierto una nueva convocatoria de becas para estudios de tercer nivel en universidades nacionales e internacionales. Las becas cubren matrícula, manutención y materiales de estudio.</p><p>Los requisitos incluyen ser ecuatoriano, haber obtenido un puntaje mínimo en el examen de ingreso y demostrar situación socioeconómica vulnerable. Las inscripciones están abiertas hasta el 30 de octubre.</p>",
+    "imagen": "images/beca.jpg",
+    "categoria": "educacion",
+    "destacado": false
+  },
+  {
+    "id": 7,
+    "titulo": "Inscripciones de instituto abiertas",
+    "fecha": "Sep 15, 2024",
+    "resumen": "Descubre como inscribirte a instituto de forma virtual.",
+    "contenido": "<p>Los institutos de la Estaca Los Chillos han habilitado inscripciones virtuales para los cursos de religión del nuevo semestre. Los cursos cubren Antiguo Testamento, Nuevo Testamento, Libro de Mormón y Doctrina y Convenios.</p><p>Las clases están disponibles en horarios matutinos, vespertinos y nocturnos para adaptarse a diferentes disponibilidades. Las inscripciones se realizan a través de la página web oficial de Institutos de Religión.</p>",
+    "imagen": "images/horario.jpg",
+    "categoria": "educacion",
+    "destacado": false
+  },
+  {
+    "id": 8,
+    "titulo": "Nuevo horario del Centro de Recursos",
+    "fecha": "Sep 30, 2024",
+    "resumen": "Acaba de abrirse un nuevo horario de atención el día Domingo en las mañanas.",
+    "contenido": "<p>El Centro de Recursos y Autosuficiencia Los Chillos anuncia la ampliación de su horario de atención. A partir del próximo mes, se atenderá también los domingos de 9:00 a 13:00, además del horario regular de martes a sábado.</p><p>El nuevo horario busca facilitar el acceso a los servicios del centro para aquellas personas que no pueden asistir durante la semana. Se ofrecerán talleres especiales de autosuficiencia los domingos por la mañana.</p>",
+    "imagen": "images/nuevo.jpg",
+    "categoria": "noticias",
+    "destacado": false
+  },
+  {
+    "id": 9,
+    "titulo": "FPE Fondo Perpetuo para la educación",
+    "fecha": "Mayo 31, 2026",
+    "resumen": "Instrucciones para aplicar al fondo perpetuo.",
+    "contenido": "<p>El Fondo Perpetuo para la Educación es un programa que ofrece préstamos educativos para que las personas puedan estudiar una carrera, especialización u otros programas de formación cuando no cuentan con los recursos económicos suficientes.\n\n¿A quiénes puede ayudar?\n\nEstudiantes de bajos o medianos ingresos.\nPersonas que desean continuar o mejorar sus estudios.\nQuienes necesitan apoyo financiero para cubrir costos educativos.\n\n¿Cómo funciona el préstamo?\n\nEl fondo presta dinero para pagar estudios y, en algunos casos, materiales o gastos relacionados.\nEl estudiante utiliza el dinero para su educación.\nUna vez finalizados los estudios (o según las condiciones del programa), el beneficiario devuelve el dinero en cuotas.\nLos pagos realizados permiten que el fondo siga ayudando a nuevos estudiantes, por eso se llama “perpetuo”.\n\nEn resumen, es un sistema de préstamos educativos que ayuda a financiar estudios y se mantiene gracias a la devolución de los préstamos por parte de los beneficiarios.\n\nMás información: https://sudamericanoroeste.laiglesiadejesucristo.org/fpe</p>",
+    "imagen": "images/nuevo.jpg",
+    "categoria": "educación",
+    "destacado": false
+  }
+]
