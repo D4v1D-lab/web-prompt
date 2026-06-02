@@ -89,5 +89,16 @@
     "categoria": "educacion",
     "destacado": true,
     "informacion": "https://sudamericanoroeste.laiglesiadejesucristo.org/fpe"
+  },
+  {
+    "id": 10,
+    "titulo": "Registro Nacional para Acceso a la Educación Superior",
+    "fecha": "Jun 2, 2026",
+    "resumen": "Del 2 al 6 de junio se abre el Registro Nacional para acceder a universidades e institutos públicos.",
+    "contenido": "<p>El Gobierno Nacional, a través del Ministerio de Educación, Deporte y Cultura (MINEDEC), abrió el proceso de Registro Nacional para el acceso a la educación superior pública, etapa obligatoria para los aspirantes interesados en obtener un cupo en universidades, escuelas politécnicas, institutos tecnológicos y conservatorios superiores públicos del país.</p><p>El proceso se desarrolla del 2 al 6 de junio de 2026 y debe realizarse de manera virtual. Durante esta etapa, los postulantes deberán completar el formulario de registro, verificar la información ingresada y descargar el comprobante correspondiente como respaldo del trámite efectuado.</p><p><strong>¿Quiénes pueden participar?</strong></p><ul><li>Estudiantes que cursan tercer año de bachillerato en el régimen Sierra &ndash; Amazonía (2025-2026)</li><li>Bachilleres graduados en años anteriores</li><li>Ciudadanos extranjeros con residencia regularizada en Ecuador</li></ul><p>Para este proceso participarán 33 universidades y escuelas politécnicas públicas, así como 54 institutos tecnológicos y conservatorios superiores.</p><p>En el primer período académico de 2026, más de 373.000 personas participaron en el Registro Nacional, reflejando el creciente interés por la educación superior pública en Ecuador.</p>",
+    "imagen": "images/registro-educacion-superior.png",
+    "categoria": "educacion",
+    "destacado": true,
+    "informacion": "https://admision.educacion.gob.ec/"
   }
 ]
