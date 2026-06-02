@@ -8,7 +8,7 @@ severity: medium
 priority: medium
 steps:
   - action: goto
-    url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com/
+    url: https://main.d3lo0zn2l3toh2.amplifyapp.com/
   - action: to_be_visible
     target: Subscríbete a nuestros boletines
   - action: fill

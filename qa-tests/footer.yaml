@@ -8,7 +8,7 @@ severity: low
 priority: low
 steps:
   - action: goto
-    url: https://staging.d3oxz0ol1ltqkc.amplifyapp.com/
+    url: https://main.d3lo0zn2l3toh2.amplifyapp.com/
   - action: to_contain_text
     target: .footer
     value: "+593 989 448 049"
