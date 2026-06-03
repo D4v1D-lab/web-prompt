@@ -16,7 +16,7 @@ $(document).ready(function () {
   $.getJSON('/data/articulos.json', function (articulos) {
     if ($('.posts').length) {
       renderCarousel(articulos);
-      renderRecentPosts(articulos);
+      renderRecentPosts(articulos, 1);
       initSearch(articulos);
     }
 
@@ -27,6 +27,8 @@ $(document).ready(function () {
     console.error('Error al cargar los artículos');
   });
 });
+
+var currentPage = 1;
 
 function renderCarousel(articulos) {
   var destacados = articulos.filter(function (a) { return a.destacado; });
@@ -72,13 +74,19 @@ function renderCarousel(articulos) {
   });
 }
 
-function renderRecentPosts(articulos) {
+function renderRecentPosts(articulos, page) {
   var recientes = articulos.filter(function (a) { return !a.destacado; });
   var $recent = $('.main .recent');
+  var perPage = 3;
 
   $recent.find('.recent-post').remove();
+  $recent.find('.pagination-controls').remove();
 
-  recientes.forEach(function (a) {
+  var start = (page - 1) * perPage;
+  var pageItems = recientes.slice(start, start + perPage);
+  var totalPages = Math.ceil(recientes.length / perPage);
+
+  pageItems.forEach(function (a) {
     var html = '<div class="recent-post clear">' +
       '<div class="recent-image"><img src="' + a.imagen + '" alt="' + a.titulo + '"></div>' +
       '<div class="post-preview">' +
@@ -89,20 +97,83 @@ function renderRecentPosts(articulos) {
       '</div></div>';
     $recent.append(html);
   });
+
+  if (totalPages > 1) {
+    var pagHtml = '<div class="pagination-controls" style="text-align: center; margin: 20px 0; clear: both; display: flex; align-items: center; justify-content: center; gap: 5px;">';
+    if (page > 1) {
+      pagHtml += '<button class="btn btn-page prev-page" style="background: rgb(6, 147, 194); color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;"><i class="fas fa-chevron-left"></i></button>';
+    }
+    for (var i = 1; i <= totalPages; i++) {
+      var isActive = i === page;
+      pagHtml += '<button class="btn btn-page page-num" data-page="' + i + '" style="background: ' + (isActive ? 'rgb(6, 147, 194)' : 'white') + '; color: ' + (isActive ? 'white' : 'rgb(6, 147, 194)') + '; border: 1px solid rgb(6, 147, 194); padding: 8px 12px; border-radius: 4px; cursor: pointer; min-width: 36px;">' + i + '</button>';
+    }
+    if (page < totalPages) {
+      pagHtml += '<button class="btn btn-page next-page" style="background: rgb(6, 147, 194); color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;"><i class="fas fa-chevron-right"></i></button>';
+    }
+    pagHtml += '</div>';
+    $recent.append(pagHtml);
+
+    $('.prev-page').on('click', function (e) {
+      e.preventDefault();
+      if (currentPage > 1) {
+        currentPage--;
+        renderRecentPosts(articulos, currentPage);
+      }
+    });
+
+    $('.next-page').on('click', function (e) {
+      e.preventDefault();
+      if (currentPage < totalPages) {
+        currentPage++;
+        renderRecentPosts(articulos, currentPage);
+      }
+    });
+
+    $('.page-num').on('click', function (e) {
+      e.preventDefault();
+      var p = parseInt($(this).data('page'));
+      if (p !== currentPage) {
+        currentPage = p;
+        renderRecentPosts(articulos, currentPage);
+      }
+    });
+  }
 }
 
 function initSearch(articulos) {
   $('input[name="search-term"]').on('input', function () {
     var query = $(this).val().toLowerCase();
 
-    $('.recent-post').each(function () {
-      var text = $(this).text().toLowerCase();
-      $(this).toggle(query === '' || text.indexOf(query) !== -1);
+    if (query === '') {
+      renderRecentPosts(articulos, currentPage);
+      return;
+    }
+
+    var recientes = articulos.filter(function (a) { return !a.destacado; });
+    var $recent = $('.main .recent');
+    $recent.find('.recent-post').remove();
+    $recent.find('.pagination-controls').remove();
+
+    var matches = recientes.filter(function (a) {
+      return a.titulo.toLowerCase().indexOf(query) !== -1 ||
+             a.resumen.toLowerCase().indexOf(query) !== -1;
+    });
+
+    matches.forEach(function (a) {
+      var html = '<div class="recent-post clear">' +
+        '<div class="recent-image"><img src="' + a.imagen + '" alt="' + a.titulo + '"></div>' +
+        '<div class="post-preview">' +
+        '<h2><a href="single.html?id=' + a.id + '" style="margin-left: 5px;" class="recent-post-title">' + a.titulo + '</a></h2>' +
+        '<i class="far fa-calendar" style="font-size: x-small; margin-left: 5px;"> ' + a.fecha + '</i>' +
+        '<p class="preview-text" style="margin-left: 2px;">' + a.resumen + '</p>' +
+        '<a href="single.html?id=' + a.id + '" class="btn" style="margin-left: 5px;">Leer mas...</a>' +
+        '</div></div>';
+      $recent.append(html);
     });
 
     $('.posts .single-post').each(function () {
       var text = $(this).text().toLowerCase();
-      $(this).toggle(query === '' || text.indexOf(query) !== -1);
+      $(this).toggle(text.indexOf(query) !== -1);
     });
 
     if ($('.posts').hasClass('slick-initialized')) {
