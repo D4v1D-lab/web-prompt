@@ -51,7 +51,7 @@ Static HTML/CSS/JS website. Content is driven by `data/articulos.json` loaded cl
 | `titulo` | string | Keep under 40 characters to avoid wrapping in carousel cards. |
 | `fecha` | string | Spanish abbreviation: Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic. Format: `"Jun 7, 2026"` |
 | `imagen` | string | Must reference a real file in `images/`. Never use external URLs. |
-| `destacado` | boolean | `true` = carousel (max 5 recommended). `false` = recent posts section (paginated, 3 per page). |
+| `destacado` | boolean | `true` = carousel. `false` = recent posts. **Default for new articles: `true`** (carousel). Only set `false` if the user explicitly asks to NOT feature it. |
 | `informacion` | string | Optional. If present, renders a blue-left-border "Para más información" box at the bottom of the article page. |
 
 ---
@@ -69,6 +69,7 @@ Static HTML/CSS/JS website. Content is driven by `data/articulos.json` loaded cl
    ```
 2. **Save image** to `images/` (hyphenated name, no spaces).
 3. **Add JSON entry** to `data/articulos.json` — increment `id`, fill all required fields.
+   **Important:** Set `"destacado": true` by default (appears in carousel). Only set `false` if the user explicitly asks not to feature it.
 4. **Test locally** (optional):
    ```bash
    python3 -m http.server 3000
@@ -185,6 +186,7 @@ Site description for search engines and social sharing — edit in `<head>` of `
 Controlled by the `destacado` field:
 - **`destacado: true`** → appears in the Slick carousel slider at the top of the main page
 - **`destacado: false`** → appears in "Contenido reciente" (recent posts) with pagination
+- **Default for new articles: `destacado: true`** (carousel). Only set `false` if the user explicitly says so.
 - Pagination shows **3 posts per page**, with page number buttons and prev/next arrows
 - Pagination controls only render when there are **4+ non-destacado articles**
 - Slick carousel configuration is in `js/scripts.js` inside `renderCarousel()`. Current settings: 3 slides, autoplay 2s, responsive breakpoints at 1290px (2 slides) and 825px (1 slide).
