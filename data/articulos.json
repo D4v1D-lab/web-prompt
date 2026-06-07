@@ -100,5 +100,16 @@
     "categoria": "educacion",
     "destacado": false,
     "informacion": "https://admision.educacion.gob.ec/"
+  },
+  {
+    "id": 11,
+    "titulo": "Beca Jóvenes del Nuevo Ecuador 2026",
+    "fecha": "Jun 7, 2026",
+    "resumen": "$828 para estudiantes de 18 a 29 años. Postula del 4 al 28 de junio.",
+    "contenido": "<p>El Gobierno Nacional, a través del Programa Jóvenes del Nuevo Ecuador 2026, ha abierto la convocatoria para otorgar <strong>3,276 becas</strong> a estudiantes de educación superior en todo el país. Cada beca consiste en un aporte económico de <strong>$828 por única ocasión</strong> (equivalente a una canasta básica familiar).</p><p>La inversión total del programa asciende a <strong>$2.7 millones</strong>.</p><h3>¿Quiénes pueden aplicar?</h3><ul><li><strong>Edad:</strong> 18 a 29 años</li><li><strong>Estudios:</strong> Cursando tercer nivel técnico, tecnológico o de grado (institutos o universidades públicas/privadas)</li><li><strong>Derechos:</strong> En goce de derechos de participación ciudadana en Ecuador</li><li><strong>Certificado de estudios</strong> emitido por tu institución</li></ul><h3>Fechas importantes</h3><p>Las postulaciones estarán abiertas desde el <strong>4 hasta el 28 de junio de 2026</strong>.</p><p>No dejes pasar esta oportunidad. Si cumples con los requisitos, postula lo antes posible.</p>",
+    "imagen": "images/beca-jovenes-2026.jpg",
+    "categoria": "educacion",
+    "destacado": true,
+    "informacion": "https://pusak.fomentoacademico.gob.ec"
   }
 ]
