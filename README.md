@@ -1,23 +1,59 @@
-# Autosuficiencia Los Chillos
+# web-prompt
 
-Blog comunitario del Centro de Recursos y Autosuficiencia Los Chillos. Sitio web estático desplegado en **AWS Amplify**. Cada vez que haces `git push` a la rama `main`, el sitio se actualiza automáticamente.
+**AI-driven static website.** This project is a template for building and managing a static website entirely through AI agent prompts. An AI agent (Claude, GPT, etc.) reads/writes `data/articulos.json` as the content source, manages images, and pushes changes to GitHub. AWS Amplify auto-deploys on every push.
 
-## Estructura del proyecto
+No manual HTML editing required — just prompt the agent, and it handles the rest.
+
+## Quick start
+
+1. **Fork or clone** this repository
+2. **Create a GitHub Personal Access Token** for your agent (Settings → Developer Settings → Personal Access Tokens → Fine-grained tokens, scope: `Repository` with read/write permissions on your fork)
+3. **Connect to AWS Amplify** (see below)
+4. **Give your AI agent** the repo URL + token — you can then say "add an article about..." and the agent will edit JSON, resize images, commit, and push
+
+## Prerequisites
+
+- **GitHub account** — to host the repository
+- **GitHub Personal Access Token** — so the AI agent can commit and push changes
+- **AWS account** — to host on AWS Amplify (free tier works)
+
+## Connecting AWS Amplify
+
+1. Go to [AWS Amplify Console](https://console.aws.amazon.com/amplify/)
+2. Click **"Create new app"** → **"Host web app"**
+3. Select **GitHub** → authorize → choose your repository and `main` branch
+4. Amplify auto-detects `amplify.yml` (no build step needed)
+5. Click **"Save and deploy"** → site is live in ~30 seconds at `https://main.xxxxxxxxx.amplifyapp.com`
+6. Every `git push` triggers an automatic redeployment
+
+## Using an AI agent
+
+Once connected, you can give your agent prompts like:
+
+- *"Add a new article about scholarships with this information: ..."*
+- *"Update article 5 with a new title and different image"*
+- *"Delete article 3 because it's outdated"*
+- *"Change the website's primary color to green"*
+- *"Add a new section page for volunteering"*
+
+The agent reads `data/articulos.json`, follows the schema rules, resizes images to the correct size, commits, pushes, and the site auto-deploys.
+
+## File structure
 
 ```
 /
-├── index.html              # Página principal (carrusel + contenido reciente)
-├── single.html             # Plantilla de artículo (?id=X)
-├── favicon.png             # Icono de pestaña del navegador
-├── amplify.yml             # Configuración de AWS Amplify
+├── index.html              # Main page (carousel + recent posts)
+├── single.html             # Article template (?id=X)
+├── favicon.png             # Browser tab icon
+├── amplify.yml             # AWS Amplify build config
 ├── data/
-│   └── articulos.json      # Todos los artículos del blog
-├── images/                 # Imágenes (530×351 píxeles)
+│   └── articulos.json      # All articles (JSON array)
+├── images/                 # Article images (530×351 px)
 ├── css/
-│   └── style.css
+│   └── style.css           # All styling and layout
 ├── js/
-│   └── scripts.js          # Carga dinámica de artículos y búsqueda
-├── paginas/                # Páginas de secciones
+│   └── scripts.js          # Dynamic rendering, pagination, search
+├── paginas/                # Section pages
 │   ├── educacion.html
 │   ├── empleo.html
 │   ├── emprender.html
@@ -25,71 +61,64 @@ Blog comunitario del Centro de Recursos y Autosuficiencia Los Chillos. Sitio web
 │   ├── testimonios.html
 │   ├── quienes-somos.html
 │   └── contactos.html
-├── qa-tests/               # Pruebas automatizadas (YAML)
-└── Readme.txt
+├── qa-tests/               # E2E test definitions (YAML)
+├── AGENTS.md               # Instructions for AI agents
+└── README.md
 ```
 
-## Cómo agregar un artículo nuevo
+## Article JSON schema
 
-1. **Abrir** `data/articulos.json`
-2. **Agregar** una nueva entrada al array siguiendo el formato de las existentes (asignar un `id` numérico nuevo)
-3. **Agregar imagen** en la carpeta `images/` (debe medir **530×351 píxeles**)
-4. **Hacer commit y push** para desplegar automáticamente
-
-### Campos del artículo
-
-| Campo | Tipo | Obligatorio | Descripción |
+| Field | Type | Required | Description |
 |---|---|---|---|
-| `id` | número | sí | Identificador único |
-| `titulo` | texto | sí | Título del artículo |
-| `fecha` | texto | sí | Fecha de publicación |
-| `resumen` | texto | sí | Texto corto que aparece en "Contenido reciente" |
-| `contenido` | HTML | sí | Contenido completo del artículo (etiquetas HTML permitidas) |
-| `imagen` | texto | sí | Ruta a la imagen (`images/archivo.jpg`) |
-| `categoria` | texto | sí | educacion, empleo, emprender, medicina, noticias |
-| `destacado` | booleano | sí | `true` = aparece en el carrusel; `false` = aparece solo en "Contenido reciente" |
-| `informacion` | texto | no | URL opcional. Si se incluye, se muestra un recuadro azul con "Para más información" |
+| `id` | number | yes | Unique identifier, ascending |
+| `titulo` | string | yes | Title (keep under 40 characters) |
+| `fecha` | string | yes | Publication date e.g. `"Jun 7, 2026"` |
+| `resumen` | string | yes | Short summary shown in recent posts |
+| `contenido` | string (HTML) | yes | Full article content (paragraphs, lists, bold) |
+| `imagen` | string | yes | Path `images/filename.jpg` |
+| `categoria` | string | yes | `educacion`, `empleo`, `emprender`, `medicina`, `noticias` |
+| `destacado` | boolean | yes | `true` = carousel; `false` = recent posts with pagination |
+| `informacion` | string | no | Optional URL. Renders "For more information" box with styled link |
 
-### Ejemplo
+### Example
 
 ```json
 {
   "id": 11,
-  "titulo": "Título del artículo",
+  "titulo": "New scholarships announced",
   "fecha": "Jun 7, 2026",
-  "resumen": "Resumen breve para la página principal.",
-  "contenido": "<p>Contenido completo aquí.</p>",
-  "imagen": "images/mi-imagen.jpg",
+  "resumen": "Government opens new scholarship applications.",
+  "contenido": "<p>Full article content here.</p>",
+  "imagen": "images/new-scholarships.jpg",
   "categoria": "educacion",
   "destacado": true,
-  "informacion": "https://ejemplo.com"
+  "informacion": "https://example.com/scholarships"
 }
 ```
 
-## Imágenes
+## Images
 
-Todas las imágenes deben redimensionarse a **530×351 píxeles** antes de agregarlas al proyecto. Usa cualquiera de estas herramientas gratuitas:
+All images must be **530×351 pixels**. Resize before adding to `images/`. Recommended tools:
 
 - **Adobe Express:** https://www.adobe.com/express/feature/image/resize
 - **Simple Image Resizer:** https://www.simpleimageresizer.com/upload
 
-## Cómo editar o eliminar un artículo
+Allowed formats: `.jpg`, `.png`. Name files with hyphens, no spaces.
 
-- **Editar:** Modifica los campos en `data/articulos.json` y haz commit + push.
-- **Eliminar:** Borra la entrada completa del JSON y el archivo de imagen de `images/`, luego haz commit + push.
-
-## Desarrollo local
-
-Para probar cambios antes de subirlos:
+## Local development
 
 ```bash
 python3 -m http.server 3000
 ```
 
-Abrir en el navegador: `http://localhost:3000/index.html`
+Open `http://localhost:3000/index.html` in your browser. Note: does NOT work from `file://` protocol — the site requires a server to load the JSON file.
 
-## Despliegue
+## Deployment
 
-El sitio se despliega automáticamente en AWS Amplify al hacer `git push` a la rama `main`.
+The live site auto-updates on every `git push` to `main`:
 
-URL de producción: https://main.d3lo0zn2l3toh2.amplifyapp.com
+```bash
+git push
+```
+
+Deployment takes ~30 seconds via AWS Amplify.
