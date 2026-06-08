@@ -62,6 +62,13 @@ The agent reads `data/articulos.json`, follows the schema rules, resizes images 
 │   ├── quienes-somos.html
 │   └── contactos.html
 ├── qa-tests/               # E2E test definitions (YAML)
+│   ├── smoke.yaml
+│   ├── petstore/
+│   │   ├── signin-successful.yaml
+│   │   ├── signin-invalid-credentials.yaml
+│   │   ├── signin-empty-fields.yaml
+│   │   └── signin-remember-me.yaml
+│   └── run.py              # Interactive test runner
 ├── AGENTS.md               # Instructions for AI agents
 └── README.md
 ```
@@ -105,35 +112,122 @@ All images must be **530×351 pixels**. Resize before adding to `images/`. Recom
 
 Allowed formats: `.jpg`, `.png`. Name files with hyphens, no spaces.
 
-## Local development
+## QA Testing
+
+E2E browser tests powered by [`qa-use`](https://desplega.ai). Test definitions are in `qa-tests/` as YAML files.
+
+### Test suites
+
+| Suite | Location | Description |
+|---|---|---|
+| **Autosuficiencia** | `qa-tests/*.yaml` | Smoke, navigation, footer, carousel, search, newsletter, responsive |
+| **Petstore Sign In** | `qa-tests/petstore/*.yaml` | Login, invalid credentials, empty fields, Remember Me |
+
+### Installation
+
+Make sure you have Node.js and npm installed (WSL):
+
+```bash
+sudo apt update && sudo apt install nodejs npm -y
+npm install -g @desplega.ai/qa-use
+qa-use install-deps
+```
+
+Export your API key (add to `~/.bashrc` to make it permanent):
+
+```bash
+export QA_USE_API_KEY=sk_qfm_98ec9c584f3d46cd8b69a385fdab9b25
+```
+
+### Running tests — interactive menu (recommended)
+
+Launch the menu-driven runner to pick individual tests, a category, or run all:
+
+```bash
+python3 qa-tests/run.py
+```
+
+Options in the menu:
+- Select a **category** (e.g. `petstore`) to run all tests in that group
+- Choose **ALL categories** to run every test
+- Pick **individual tests** by entering numbers separated by spaces
+
+### Running tests — direct CLI
+
+Run a single test file:
+
+```bash
+qa-use test run qa-tests/petstore/signin-successful.yaml
+qa-use test run qa-tests/smoke.yaml
+```
+
+Run all autosuficiencia tests:
+
+```bash
+qa-use test run qa-tests/smoke.yaml && \
+qa-use test run qa-tests/navigation.yaml && \
+qa-use test run qa-tests/footer.yaml && \
+qa-use test run qa-tests/carousel.yaml && \
+qa-use test run qa-tests/search.yaml && \
+qa-use test run qa-tests/newsletter.yaml && \
+qa-use test run qa-tests/responsive.yaml
+```
+
+Run all petstore sign-in tests:
+
+```bash
+qa-use test run qa-tests/petstore/signin-successful.yaml && \
+qa-use test run qa-tests/petstore/signin-invalid-credentials.yaml && \
+qa-use test run qa-tests/petstore/signin-empty-fields.yaml && \
+qa-use test run qa-tests/petstore/signin-remember-me.yaml
+```
+
+### Petstore Sign In — test scenarios
+
+Based on the [functional specification](documento_funcional_signin.md), four test cases cover the Sign In feature on `https://petstore.octoperf.com`:
+
+| Test file | Scenario | What it verifies |
+|---|---|---|
+| `signin-successful.yaml` | Login exitoso | Valid credentials → redirect to home, "Sign Out" visible |
+| `signin-invalid-credentials.yaml` | Credenciales inválidas | Wrong user/pass → error message displayed |
+| `signin-empty-fields.yaml` | Campos vacíos | Blank form submission → validation error |
+| `signin-remember-me.yaml` | Remember Me | Session persists after page reload |
+
+Error codes from the spec: `AUTH_001` (invalid credentials), `AUTH_002` (missing fields), `AUTH_500` (server error).
+
+### Test structure
+
+Each YAML file follows this format:
+
+```yaml
+name: Test Name
+description: What it validates
+tags:
+  - category
+  - priority
+variables:
+  key: value           # reusable parameters
+steps:
+  - action: goto       # navigate to URL
+    url: ...
+  - action: click      # click element (by ARIA label)
+    target: ...
+  - action: fill       # type into input
+    target: ...
+    value: $var
+  - action: to_be_visible  # assert element is visible
+    target: ...
+```
+
+Available actions: `goto`, `click`, `fill`, `type`, `press`, `check`, `uncheck`, `select`, `to_be_visible`, `to_be_hidden`, `to_have_text`, `to_have_value`, `wait`, `wait_for_url`, `reload`, `back`, `forward`, `ai_action`, `ai_assertion`.
+
+### Local development (autosuficiencia site)
 
 ```bash
 python3 -m http.server 3000
 ```
 
 Open `http://localhost:3000/index.html` in your browser. Note: does NOT work from `file://` protocol — the site requires a server to load the JSON file.
-
-### Running QA tests
-
-E2E test definitions are in `qa-tests/*.yaml`. Run them using the `qa-use` CLI:
-
-```bash
-qa-use run qa-tests/smoke.yaml
-qa-use run qa-tests/navigation.yaml
-qa-use run qa-tests/footer.yaml
-qa-use run qa-tests/carousel.yaml
-qa-use run qa-tests/search.yaml
-qa-use run qa-tests/newsletter.yaml
-qa-use run qa-tests/responsive.yaml
-```
-
-Or run all at once:
-
-```bash
-for f in qa-tests/*.yaml; do qa-use run "$f"; done
-```
-
-Each test file verifies different aspects of the site — page load, navigation links, footer content, carousel rendering, search functionality, newsletter form, and responsive layout. Update the `url` field in any file if the domain changes.
 
 ## Deployment
 

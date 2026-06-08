@@ -1,0 +1,38 @@
+name: Sign In — Remember Me
+description: >
+  Validates that checking "Remember Me" persists the session, keeping the user
+  logged in across page reloads (flujo principal — persistencia de sesión).
+tags:
+  - petstore
+  - signin
+  - session
+  - medium
+app_config: b76ece5b-940d-4d4e-ac79-6cccfce2106e
+variables:
+  username: j2ee
+  password: j2ee
+steps:
+  - action: goto
+    url: https://petstore.octoperf.com/actions/Catalog.action
+  - action: click
+    target: Sign In link in the top right corner
+  - action: fill
+    target: username input field on the login form
+    value: $username
+  - action: fill
+    target: password input field on the login form
+    value: $password
+  - action: click
+    target: Remember Me checkbox
+  - action: click
+    target: Login button
+  - action: wait
+    value: "2000"
+  - action: to_have_url
+    target: https://petstore.octoperf.com/actions/Catalog.action
+  - action: to_be_visible
+    target: Sign Out link in the top right corner
+  - action: goto
+    url: https://petstore.octoperf.com/actions/Catalog.action
+  - action: to_be_visible
+    target: Sign Out link in the top right corner

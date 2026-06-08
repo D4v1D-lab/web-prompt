@@ -1,0 +1,17 @@
+name: Sign In — Empty Fields
+description: >
+  Validates that the system blocks form submission when username or password
+  fields are left empty (flujo de excepción — campos vacíos).
+tags:
+  - petstore
+  - signin
+  - validation
+  - high
+app_config: b76ece5b-940d-4d4e-ac79-6cccfce2106e
+steps:
+  - action: goto
+    url: https://petstore.octoperf.com/actions/Account.action?signonForm=
+  - action: click
+    target: Login button
+  - action: to_be_visible
+    target: Please enter your username and password error message
