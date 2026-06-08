@@ -94,6 +94,12 @@ function renderRecentPosts(articulos, page) {
       '<i class="far fa-calendar" style="font-size: x-small; margin-left: 5px;"> ' + a.fecha + '</i>' +
       '<p class="preview-text" style="margin-left: 2px;">' + a.resumen + '</p>' +
       '<a href="single.html?id=' + a.id + '" class="btn" style="margin-left: 5px;">Leer mas...</a>' +
+      '<div class="share-section small">' +
+        '<span class="share-label">Compartir:</span>' +
+        '<a href="https://api.whatsapp.com/send?text=' + encodeURIComponent(a.titulo + ' - ' + window.location.origin + '/single.html?id=' + a.id) + '" target="_blank" rel="noopener" class="share-btn whatsapp" title="Compartir en WhatsApp"><i class="fab fa-whatsapp"></i></a>' +
+        '<a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.origin + '/single.html?id=' + a.id) + '" target="_blank" rel="noopener" class="share-btn facebook" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>' +
+        '<button class="share-btn link" title="Copiar enlace" onclick="copiarEnlace(this, \'' + window.location.origin + '/single.html?id=' + a.id + '\')"><i class="fas fa-link"></i></button>' +
+      '</div>' +
       '</div></div>';
     $recent.append(html);
   });
@@ -167,6 +173,12 @@ function initSearch(articulos) {
         '<i class="far fa-calendar" style="font-size: x-small; margin-left: 5px;"> ' + a.fecha + '</i>' +
         '<p class="preview-text" style="margin-left: 2px;">' + a.resumen + '</p>' +
         '<a href="single.html?id=' + a.id + '" class="btn" style="margin-left: 5px;">Leer mas...</a>' +
+        '<div class="share-section small">' +
+          '<span class="share-label">Compartir:</span>' +
+          '<a href="https://api.whatsapp.com/send?text=' + encodeURIComponent(a.titulo + ' - ' + window.location.origin + '/single.html?id=' + a.id) + '" target="_blank" rel="noopener" class="share-btn whatsapp" title="Compartir en WhatsApp"><i class="fab fa-whatsapp"></i></a>' +
+          '<a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.origin + '/single.html?id=' + a.id) + '" target="_blank" rel="noopener" class="share-btn facebook" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>' +
+          '<button class="share-btn link" title="Copiar enlace" onclick="copiarEnlace(this, \'' + window.location.origin + '/single.html?id=' + a.id + '\')"><i class="fas fa-link"></i></button>' +
+        '</div>' +
         '</div></div>';
       $recent.append(html);
     });
@@ -205,8 +217,37 @@ function renderArticle(articulos) {
       '<strong style="color: rgb(6, 147, 194);">Para más información:</strong> ' +
       '<a href="' + articulo.informacion + '" target="_blank" rel="noopener" style="color: rgb(6, 147, 194); word-break: break-all;">' + articulo.informacion + '</a>' +
     '</div>' : '') +
+    '<div class="share-section">' +
+      '<span class="share-label">Compartir:</span>' +
+      '<a href="https://api.whatsapp.com/send?text=' + encodeURIComponent(articulo.titulo + ' - ' + window.location.href) + '" target="_blank" rel="noopener" class="share-btn whatsapp" title="Compartir en WhatsApp"><i class="fab fa-whatsapp"></i></a>' +
+      '<a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href) + '" target="_blank" rel="noopener" class="share-btn facebook" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>' +
+      '<button class="share-btn link" title="Copiar enlace" onclick="copiarEnlace(this)"><i class="fas fa-link"></i></button>' +
+    '</div>' +
     '<div style="margin-top: 30px;"><a href="index.html" class="btn">Volver a la página principal</a></div>' +
     '</article>';
 
   $container.html(html);
+}
+
+function copiarEnlace(btn, url) {
+  url = url || window.location.href;
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(url).then(function () {
+      var $btn = $(btn);
+      var orig = $btn.html();
+      $btn.html('<i class="fas fa-check"></i>');
+      setTimeout(function () { $btn.html(orig); }, 2000);
+    });
+  } else {
+    var input = document.createElement('input');
+    input.value = url;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+    var $btn = $(btn);
+    var orig = $btn.html();
+    $btn.html('<i class="fas fa-check"></i>');
+    setTimeout(function () { $btn.html(orig); }, 2000);
+  }
 }
