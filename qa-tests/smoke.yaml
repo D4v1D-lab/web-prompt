@@ -8,7 +8,7 @@ severity: critical
 priority: urgent
 steps:
   - action: goto
-    url: https://main.d3lo0zn2l3toh2.amplifyapp.com/
+    url: https://main.dl11nb8ahrd81.amplifyapp.com/index.html
   - action: to_be_visible
     target: Autosuficiencia Los Chillos
   - action: to_be_visible

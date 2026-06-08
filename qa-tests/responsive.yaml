@@ -8,7 +8,7 @@ severity: medium
 priority: medium
 steps:
   - action: goto
-    url: https://main.d3lo0zn2l3toh2.amplifyapp.com/
+    url: https://main.dl11nb8ahrd81.amplifyapp.com/index.html
   - action: wait_for_timeout
     value: "1000"
   - action: to_be_visible

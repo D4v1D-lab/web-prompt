@@ -113,6 +113,28 @@ python3 -m http.server 3000
 
 Open `http://localhost:3000/index.html` in your browser. Note: does NOT work from `file://` protocol — the site requires a server to load the JSON file.
 
+### Running QA tests
+
+E2E test definitions are in `qa-tests/*.yaml`. Run them using the `qa-use` CLI:
+
+```bash
+qa-use run qa-tests/smoke.yaml
+qa-use run qa-tests/navigation.yaml
+qa-use run qa-tests/footer.yaml
+qa-use run qa-tests/carousel.yaml
+qa-use run qa-tests/search.yaml
+qa-use run qa-tests/newsletter.yaml
+qa-use run qa-tests/responsive.yaml
+```
+
+Or run all at once:
+
+```bash
+for f in qa-tests/*.yaml; do qa-use run "$f"; done
+```
+
+Each test file verifies different aspects of the site — page load, navigation links, footer content, carousel rendering, search functionality, newsletter form, and responsive layout. Update the `url` field in any file if the domain changes.
+
 ## Deployment
 
 The live site auto-updates on every `git push` to `main`:
