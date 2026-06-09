@@ -445,6 +445,10 @@ color: rgb(6, 147, 194);
         height: 350px;
     }
 
+    .footer {
+        height: auto;
+    }
+
     .footer .footer-content {
         flex-wrap: wrap;
         height: auto;
@@ -565,6 +569,10 @@ color: rgb(6, 147, 194);
         height: 280px;
     }
 
+    .footer {
+        height: auto;
+    }
+
     .footer .footer-content {
         flex-direction: column;
         height: auto;
@@ -573,6 +581,10 @@ color: rgb(6, 147, 194);
     .footer .footer-content .section {
         flex: none;
         width: 100%;
+    }
+
+    .footer .footer-bottom {
+        position: static;
     }
 
     .share-btn {
