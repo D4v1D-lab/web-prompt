@@ -1,44 +1,52 @@
 # web-prompt
 
-**AI-driven static website.** This project is a template for building and managing a static website entirely through AI agent prompts. An AI agent (Claude, GPT, etc.) reads/writes `data/articulos.json` as the content source, manages images, and pushes changes to GitHub. AWS Amplify auto-deploys on every push.
+**AI-managed static website.** Content is driven by `data/articulos.json` and auto-deploys via AWS Amplify on every `git push`. An AI agent reads `AGENTS.md`, manages articles, images, and layout — no manual editing required.
 
-No manual HTML editing required — just prompt the agent, and it handles the rest.
-
-## Quick start
-
-1. **Fork or clone** this repository
-2. **Create a GitHub Personal Access Token** for your agent (Settings → Developer Settings → Personal Access Tokens → Fine-grained tokens, scope: `Repository` with read/write permissions on your fork)
-3. **Connect to AWS Amplify** (see below)
-4. **Give your AI agent** the repo URL + token — you can then say "add an article about..." and the agent will edit JSON, resize images, commit, and push
+---
 
 ## Prerequisites
 
 - **GitHub account** — to host the repository
-- **GitHub Personal Access Token** — so the AI agent can commit and push changes
-- **AWS account** — to host on AWS Amplify (free tier works)
+- **GitHub Personal Access Token** — with repo read/write permissions ([Settings → Developer settings → Personal access tokens → Fine-grained tokens](https://github.com/settings/tokens))
+- **AWS account** — for Amplify hosting (free tier works)
+- **Python 3** — for local preview (`python3 -m http.server`)
+- **Node.js + npm** — for QA tests (`qa-use` CLI)
 
-## Connecting AWS Amplify
+---
+
+## Setup — step by step
+
+### 1. Fork or clone this repository
+
+```bash
+git clone https://github.com/your-username/web-prompt.git
+cd web-prompt
+```
+
+### 2. Connect to AWS Amplify
 
 1. Go to [AWS Amplify Console](https://console.aws.amazon.com/amplify/)
 2. Click **"Create new app"** → **"Host web app"**
 3. Select **GitHub** → authorize → choose your repository and `main` branch
-4. Amplify auto-detects `amplify.yml` (no build step needed)
-5. Click **"Save and deploy"** → site is live in ~30 seconds at `https://main.xxxxxxxxx.amplifyapp.com`
-6. Every `git push` triggers an automatic redeployment
+4. Amplify auto-detects `amplify.yml` (no build step)
+5. Click **"Save and deploy"** → site is live in ~30 seconds
+6. Every `git push` triggers automatic redeployment
 
-## Using an AI agent
+### 3. Connect an AI agent
 
-Once connected, you can give your agent prompts like:
+Give your AI agent the **repository URL** and **GitHub token**. The agent reads `AGENTS.md` to learn the project structure, content rules, and workflows.
 
-- *"Add a new article about scholarships with this information: ..."*
-- *"Update article 5 with a new title and different image"*
-- *"Delete article 3 because it's outdated"*
-- *"Change the website's primary color to green"*
-- *"Add a new section page for volunteering"*
+**Recommended — export the token in your shell:**
 
-The agent reads `data/articulos.json`, follows the schema rules, resizes images to the correct size, commits, pushes, and the site auto-deploys.
+```bash
+export GITHUB_TOKEN=github_pat_xxxxxxxxxxxx
+```
 
-## File structure
+Then share the token with the agent so it can clone, edit, commit, and push on your behalf. The agent will handle everything — adding articles, resizing images, modifying layout, and deploying.
+
+---
+
+## Project structure
 
 ```
 /
@@ -74,7 +82,11 @@ The agent reads `data/articulos.json`, follows the schema rules, resizes images 
 └── README.md
 ```
 
-## Article JSON schema
+---
+
+## Managing content
+
+### Article JSON schema
 
 | Field | Type | Required | Description |
 |---|---|---|---|
@@ -86,9 +98,9 @@ The agent reads `data/articulos.json`, follows the schema rules, resizes images 
 | `imagen` | string | yes | Path `images/filename.jpg` |
 | `categoria` | string | yes | `educacion`, `empleo`, `emprender`, `medicina`, `noticias` |
 | `destacado` | boolean | yes | `true` = carousel; `false` = recent posts with pagination |
-| `informacion` | string | no | Optional URL. Renders "For more information" box with styled link |
+| `informacion` | string | no | Optional URL. Renders "For more information" box |
 
-### Example
+**Example:**
 
 ```json
 {
@@ -104,28 +116,63 @@ The agent reads `data/articulos.json`, follows the schema rules, resizes images 
 }
 ```
 
-## Images
+### Adding articles
 
-All images must be **530×351 pixels**. Resize before adding to `images/`. Recommended tools:
+1. Resize your image to **530×351 pixels** (required)
+2. Save it to `images/` (hyphenated name, no spaces)
+3. Add a new entry to `data/articulos.json` (increment `id`, fill all fields)
+4. Commit and push:
 
-- **Adobe Express:** https://www.adobe.com/express/feature/image/resize
-- **Simple Image Resizer:** https://www.simpleimageresizer.com/upload
+```bash
+git add -A
+git commit -m "add article N: title"
+git push
+```
 
-Allowed formats: `.jpg`, `.png`. Name files with hyphens, no spaces.
+### Modifying articles
+
+Edit the entry in `data/articulos.json`. If replacing the image, delete the old one and add the new resized version. Commit and push.
+
+### Deleting articles
+
+Remove the entry from `data/articulos.json` and delete the image file:
+
+```bash
+git rm images/old-file.jpg
+git add -A
+git commit -m "remove article N"
+git push
+```
+
+### Image requirements
+
+- **Resolution:** 530×351 pixels (fixed card size — any other size stretches or crops)
+- **Tools:** PIL (Python), Adobe Express, or any image resizer
+- **Formats:** `.jpg`, `.png`
+- **Naming:** Hyphenated, no spaces (e.g. `new-scholarship.jpg`)
+- **Location:** `images/` folder only
+
+### Layout & branding changes
+
+Edit `css/style.css` for colors, fonts, and spacing. Edit `index.html`, `single.html`, and all files in `paginas/` for nav, footer, and logo changes (all 9 files share the same header/footer). See `AGENTS.md` for detailed instructions.
+
+---
+
+## Local development
+
+```bash
+python3 -m http.server 3000
+```
+
+Open `http://localhost:3000/index.html`. The site requires a server (`file://` won't work — JSON is fetched via `$.getJSON`).
+
+---
 
 ## QA Testing
 
-E2E browser tests powered by [`qa-use`](https://desplega.ai). Test definitions are in `qa-tests/` as YAML files.
-
-### Test suites
-
-| Suite | Location | Description |
-|---|---|---|
-| **Autosuficiencia** | `qa-tests/*.yaml` | Smoke, navigation, footer, carousel, search, newsletter, responsive |
+E2E browser tests powered by [`qa-use`](https://desplega.ai). Test definitions are in `qa-tests/*.yaml`.
 
 ### Installation
-
-Make sure you have Node.js and npm installed (WSL):
 
 ```bash
 sudo apt update && sudo apt install nodejs npm -y
@@ -139,28 +186,23 @@ Export your API key (add to `~/.bashrc` to make it permanent):
 export QA_USE_API_KEY=sk_qfm_98ec9c584f3d46cd8b69a385fdab9b25
 ```
 
-### Running tests — interactive menu (recommended)
-
-Launch the menu-driven runner to pick individual tests, a category, or run all:
+### Interactive runner (recommended)
 
 ```bash
 python3 qa-tests/run.py
 ```
 
-Options in the menu:
-- Select a **category** to run all tests in that group
-- Choose **ALL categories** to run every test
-- Pick **individual tests** by entering numbers separated by spaces
+Pick a test category, individual tests, or run all from the menu.
 
-### Running tests — direct CLI
+### Direct CLI
 
-Run a single test file:
+Run a single test:
 
 ```bash
 qa-use test run qa-tests/smoke.yaml
 ```
 
-Run all autosuficiencia tests:
+Run all tests:
 
 ```bash
 qa-use test run qa-tests/smoke.yaml && \
@@ -172,9 +214,7 @@ qa-use test run qa-tests/newsletter.yaml && \
 qa-use test run qa-tests/responsive.yaml
 ```
 
-### Test structure
-
-Each YAML file follows this format:
+### Test file format
 
 ```yaml
 name: Test Name
@@ -183,35 +223,29 @@ tags:
   - category
   - priority
 variables:
-  key: value           # reusable parameters
+  key: value
 steps:
-  - action: goto       # navigate to URL
+  - action: goto
     url: ...
-  - action: click      # click element (by ARIA label)
+  - action: click
     target: ...
-  - action: fill       # type into input
+  - action: fill
     target: ...
     value: $var
-  - action: to_be_visible  # assert element is visible
+  - action: to_be_visible
     target: ...
 ```
 
 Available actions: `goto`, `click`, `fill`, `type`, `press`, `check`, `uncheck`, `select`, `to_be_visible`, `to_be_hidden`, `to_have_text`, `to_have_value`, `wait`, `wait_for_url`, `reload`, `back`, `forward`, `ai_action`, `ai_assertion`.
 
-### Local development (autosuficiencia site)
-
-```bash
-python3 -m http.server 3000
-```
-
-Open `http://localhost:3000/index.html` in your browser. Note: does NOT work from `file://` protocol — the site requires a server to load the JSON file.
+---
 
 ## Deployment
 
-The live site auto-updates on every `git push` to `main`:
+The site auto-deploys on every push to `main`:
 
 ```bash
 git push
 ```
 
-Deployment takes ~30 seconds via AWS Amplify.
+Changes go live on Amplify in ~30 seconds.
