@@ -121,6 +121,8 @@ header * {
 
 .page-content{
     min-height: 100%;
+    max-width: 85%;
+    margin: 0 auto;
 }
 
 .page-content a:hover{
@@ -417,6 +419,48 @@ color: rgb(6, 147, 194);
 
 }
 
+@media only screen and (max-width: 900px) {
+
+    .main {
+        width: 92%;
+    }
+
+    .main .recent {
+        width: 65%;
+        float: left;
+    }
+
+    .main .side-bar {
+        width: 35%;
+        float: left;
+        height: auto;
+        padding-top: 15px;
+    }
+
+    .section.search {
+        margin-top: 0;
+    }
+
+    .post-slider .posts .single-post {
+        height: 350px;
+    }
+
+    .footer .footer-content {
+        flex-wrap: wrap;
+        height: auto;
+    }
+
+    .footer .footer-content .section {
+        flex: 1 1 45%;
+        min-width: 250px;
+    }
+
+    .page-content {
+        max-width: 92% !important;
+    }
+
+}
+
 @media only screen and (max-width: 670px) {
 
     header {
@@ -475,11 +519,6 @@ color: rgb(6, 147, 194);
         max-height: 50em;
     }
 
-    .main .recent-post .recent-image {
-        width: 45%;
-        float: left;
-    }
-
     .post-slider .next{
         position: absolute;
         top: 50%;
@@ -495,6 +534,61 @@ color: rgb(6, 147, 194);
         left: 8px;
         cursor: pointer;
         
+    }
+
+    .main {
+        width: 96%;
+    }
+
+    .main .recent {
+        width: 100%;
+        float: none;
+    }
+
+    .main .side-bar {
+        width: 100%;
+        float: none;
+        height: auto;
+    }
+
+    .main .recent-post .recent-image {
+        width: 100%;
+        float: none;
+    }
+
+    .main .recent-post .post-preview {
+        width: 100%;
+        float: none;
+    }
+
+    .post-slider .posts .single-post {
+        height: 280px;
+    }
+
+    .footer .footer-content {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .footer .footer-content .section {
+        flex: none;
+        width: 100%;
+    }
+
+    .share-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+
+    .btn-page {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .page-content {
+        max-width: 96% !important;
+        padding: 10px !important;
     }
 
 }
