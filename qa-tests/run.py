@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-QA Test Runner — Petstore & Autosuficiencia
+QA Test Runner — Autosuficiencia
 ───────────────────────────────────────────
 Run individual test files or all tests at once.
 Designed for WSL / PyCharm terminal.
@@ -25,7 +25,7 @@ RESET = "\033[0m"
 BANNER = f"""
 {CYAN}{'=' * 60}
   QA Test Runner
-  Petstore Sign In & Autosuficiencia
+  Autosuficiencia Los Chillos
 {'=' * 60}{RESET}
 """
 

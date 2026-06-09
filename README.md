@@ -63,11 +63,12 @@ The agent reads `data/articulos.json`, follows the schema rules, resizes images 
 │   └── contactos.html
 ├── qa-tests/               # E2E test definitions (YAML)
 │   ├── smoke.yaml
-│   ├── petstore/
-│   │   ├── signin-successful.yaml
-│   │   ├── signin-invalid-credentials.yaml
-│   │   ├── signin-empty-fields.yaml
-│   │   └── signin-remember-me.yaml
+│   ├── navigation.yaml
+│   ├── footer.yaml
+│   ├── carousel.yaml
+│   ├── search.yaml
+│   ├── newsletter.yaml
+│   ├── responsive.yaml
 │   └── run.py              # Interactive test runner
 ├── AGENTS.md               # Instructions for AI agents
 └── README.md
@@ -121,7 +122,6 @@ E2E browser tests powered by [`qa-use`](https://desplega.ai). Test definitions a
 | Suite | Location | Description |
 |---|---|---|
 | **Autosuficiencia** | `qa-tests/*.yaml` | Smoke, navigation, footer, carousel, search, newsletter, responsive |
-| **Petstore Sign In** | `qa-tests/petstore/*.yaml` | Login, invalid credentials, empty fields, Remember Me |
 
 ### Installation
 
@@ -148,7 +148,7 @@ python3 qa-tests/run.py
 ```
 
 Options in the menu:
-- Select a **category** (e.g. `petstore`) to run all tests in that group
+- Select a **category** to run all tests in that group
 - Choose **ALL categories** to run every test
 - Pick **individual tests** by entering numbers separated by spaces
 
@@ -157,7 +157,6 @@ Options in the menu:
 Run a single test file:
 
 ```bash
-qa-use test run qa-tests/petstore/signin-successful.yaml
 qa-use test run qa-tests/smoke.yaml
 ```
 
@@ -172,28 +171,6 @@ qa-use test run qa-tests/search.yaml && \
 qa-use test run qa-tests/newsletter.yaml && \
 qa-use test run qa-tests/responsive.yaml
 ```
-
-Run all petstore sign-in tests:
-
-```bash
-qa-use test run qa-tests/petstore/signin-successful.yaml && \
-qa-use test run qa-tests/petstore/signin-invalid-credentials.yaml && \
-qa-use test run qa-tests/petstore/signin-empty-fields.yaml && \
-qa-use test run qa-tests/petstore/signin-remember-me.yaml
-```
-
-### Petstore Sign In — test scenarios
-
-Based on the [functional specification](documento_funcional_signin.md), four test cases cover the Sign In feature on `https://petstore.octoperf.com`:
-
-| Test file | Scenario | What it verifies |
-|---|---|---|
-| `signin-successful.yaml` | Login exitoso | Valid credentials → redirect to home, "Sign Out" visible |
-| `signin-invalid-credentials.yaml` | Credenciales inválidas | Wrong user/pass → error message displayed |
-| `signin-empty-fields.yaml` | Campos vacíos | Blank form submission → validation error |
-| `signin-remember-me.yaml` | Remember Me | Session persists after page reload |
-
-Error codes from the spec: `AUTH_001` (invalid credentials), `AUTH_002` (missing fields), `AUTH_500` (server error).
 
 ### Test structure
 
