@@ -65,27 +65,22 @@
                 </div>
             </div>
 
-            <section id="ubicacion" class="ubicacion-section" style="margin: 2rem 0;">
+            <section id="ubicacion" class="ubicacion-section">
                 <h2 style="color: rgb(6, 147, 194); font-family: 'Kreon'; font-size: 1.5em; margin-bottom: 15px;">Ubicación y horario de atención</h2>
-                <div class="ubicacion-grid" style="display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.5rem; align-items: start;">
+                <div class="ubicacion-grid">
                     <div class="ubicacion-mapa">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7631826244838!2d-78.4788332!3d-0.3012215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d5a2adbb25a999%3A0x187c9c68ffe81646!2sLa%20Iglesia%20de%20Jesucristo%20de%20los%20Santos%20de%20los%20%C3%9Altimos%20D%C3%ADas!5e0!3m2!1sen!2sec!4v1781052879700!5m2!1sen!2sec" width="100%" height="350" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación del Centro de Recursos y Autosuficiencia Los Chillos"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7631826244838!2d-78.4788332!3d-0.3012215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d5a2adbb25a999%3A0x187c9c68ffe81646!2sLa%20Iglesia%20de%20Jesucristo%20de%20los%20Santos%20de%20los%20%C3%9Altimos%20D%C3%ADas!5e0!3m2!1sen!2sec!4v1781052879700!5m2!1sen!2sec" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación del Centro de Recursos y Autosuficiencia Los Chillos"></iframe>
                     </div>
-                    <div class="ubicacion-info" style="background: #f7f7f7; border: 1px solid #e0e0e0; border-radius: 8px; padding: 1.25rem 1.5rem;">
+                    <div class="ubicacion-info">
                         <h3 style="color: rgb(6, 147, 194); font-family: 'Kreon'; margin-top: 0;">Horario de atención</h3>
-                        <ul style="list-style: none; padding: 0; margin: 0.5rem 0 1rem 0;">
-                            <li style="margin-bottom: 0.4rem; font-size: 1.05rem;"><strong>Domingos:</strong> 5:00 pm – 6:30 pm</li>
-                            <li style="font-style: italic; color: #555; font-size: 0.9rem;">No atendemos en días feriados.</li>
+                        <ul class="horario-lista">
+                            <li><strong>Domingos:</strong> 5:00 pm – 6:30 pm</li>
+                            <li class="horario-nota">No atendemos en días feriados.</li>
                         </ul>
-                        <a href="https://www.google.com/maps/search/?api=1&query=La+Iglesia+de+Jesucristo+de+los+Santos+de+los+%C3%9Altimos+D%C3%ADas&query_place_id=0x91d5a2adbb25a999%3A0x187c9c68ffe81646" target="_blank" rel="noopener noreferrer" class="btn" style="display: inline-block;">Cómo llegar</a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=La+Iglesia+de+Jesucristo+de+los+Santos+de+los+%C3%9Altimos+D%C3%ADas&query_place_id=0x91d5a2adbb25a999%3A0x187c9c68ffe81646" target="_blank" rel="noopener noreferrer" class="boton-mapa">Cómo llegar</a>
                     </div>
                 </div>
             </section>
-            <style>
-                @media (max-width: 700px) {
-                    .ubicacion-grid { grid-template-columns: 1fr !important; }
-                }
-            </style>
 
             <div style="margin-top: 30px;">
                 <a href="../index.html" class="btn">Volver a la página principal</a>

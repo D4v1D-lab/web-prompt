@@ -396,6 +396,87 @@ color: rgb(6, 147, 194);
     font-size: 0.8em;
 }
 
+/* UBICACION / HORARIOS / EVENTOS -----------------------------------------------------------------------> */
+
+.ubicacion-section {
+    margin: 2rem 0;
+}
+
+.ubicacion-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.ubicacion-mapa iframe {
+    border-radius: 8px;
+    width: 100%;
+    height: 350px;
+}
+
+.ubicacion-info {
+    background: #f7f7f7;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.25rem 1.5rem;
+}
+
+.horario-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.horario-lista li {
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+}
+
+.horario-nota {
+    font-style: italic;
+    color: #555;
+    font-size: 0.9rem !important;
+}
+
+.boton-mapa {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    background: #2e7d32;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: background 0.2s ease;
+}
+
+.boton-mapa:hover {
+    background: #1b5e20;
+}
+
+.calendario-wrapper {
+    margin-top: 1.5rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.calendario-wrapper iframe {
+    display: block;
+}
+
+.nota-calendario {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+@media (max-width: 700px) {
+    .ubicacion-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* MEDIA QUERIES ---------------------------------------------------------------------------------------> */
 
 @media only screen and (max-width: 1290px) {
