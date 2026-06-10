@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Emprender - Autosuficiencia Los Chillos">
-    <meta property="og:title" content="Emprender - Autosuficiencia Los Chillos">
-    <meta property="og:description" content="Recursos para emprendedores de la comunidad de Los Chillos">
+    <meta name="description" content="Eventos - Autosuficiencia Los Chillos">
+    <meta property="og:title" content="Eventos - Autosuficiencia Los Chillos">
+    <meta property="og:description" content="Calendario de eventos y talleres del Centro de Recursos y Autosuficiencia Los Chillos">
     <meta property="og:type" content="website">
     <link rel="icon" type="image/png" href="../favicon.png">
     <script src="https://kit.fontawesome.com/034d3f2a55.js" crossorigin="anonymous"></script>
@@ -14,11 +14,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- Slick carousel -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <script src="../js/scripts.js"></script>
-    <title>Emprender - Autosuficiencia Los Chillos</title>
+    <title>Eventos - Autosuficiencia Los Chillos</title>
 </head>
 
 <body>
@@ -37,36 +34,42 @@
                 <ul>
                     <li><a href="educacion.html" style="font-size: 0.75em;">Educación</a></li>
                     <li><a href="empleo.html" style="font-size: 0.75em;">Empleo</a></li>
-                    <li><a href="emprender.html" style="font-size: 0.75em;">Emprender</a></li>
+                    <li><a href="contactos.html#ubicacion" style="font-size: 0.75em;">Horarios</a></li>
                     <li><a href="medicina.html" style="font-size: 0.75em;">Medicina</a></li>
                     <li><a href="testimonios.html" style="font-size: 0.75em;">Testimonios</a></li>
                 </ul>
             </li>
+            <li><a href="eventos.html">Eventos</a></li>
         </ul>
     </header>
 
     <div class="page-content" style="margin: 25px auto; padding: 20px;">
         <div style="background: white; padding: 30px; border-radius: 5px; box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5); min-height: 400px;">
-            <h1 style="color: rgb(6, 147, 194); font-family: 'Kreon'; font-size: 2em;">Emprender</h1>
+            <h1 style="color: rgb(6, 147, 194); font-family: 'Kreon'; font-size: 2em;">Eventos y talleres</h1>
             <div style="border-bottom: 2px solid rgb(6, 147, 194); width: 80px; margin-bottom: 25px;"></div>
             <div style="color: #333; line-height: 1.8; font-family: 'Josefin Sans', sans-serif;">
-                                <h2 style="color: rgb(6, 147, 194); font-family: 'Kreon';">Convierte tu idea en un negocio</h2>
-                <p>Si tienes el deseo de emprender, el centro ofrece cursos especialmente diseñados para ayudarte a desarrollar las habilidades necesarias para iniciar y hacer crecer tu propio proyecto.</p>
-                <p><strong>¿Qué ofrecemos?</strong></p>
-                <ul>
-                    <li>Cursos prácticos enfocados en emprendimiento</li>
-                    <li>Capacitación en finanzas básicas para tu negocio</li>
-                    <li>Mentoría y seguimiento personalizado</li>
-                    <li>Herramientas para crear un plan de negocio sólido</li>
-                    <li>Acceso a una red de emprendedores locales</li>
-                </ul>
-                <p>No importa si apenas tienes una idea o ya estás empezando — aquí te damos el impulso y el conocimiento que necesitas para avanzar.</p>
-                <div style="margin-top: 25px; padding: 15px; background: #f0f8fb; border-left: 4px solid rgb(6, 147, 194); border-radius: 3px; font-family: 'Josefin Sans', sans-serif;">
-                    <i class="fas fa-external-link-alt" style="color: rgb(6, 147, 194); margin-right: 8px;"></i>
-                    <strong style="color: rgb(6, 147, 194);">Más información:</strong>
-                    <a href="https://www.churchofjesuschrist.org/study/manual/employment/04-help-starting-a-business?lang=spa" target="_blank" rel="noopener" style="color: rgb(6, 147, 194); word-break: break-all;">https://www.churchofjesuschrist.org/study/manual/employment/04-help-starting-a-business?lang=spa</a>
-                </div>
+                <p>Aquí encontrarás las próximas actividades, talleres y eventos organizados por el Centro de Recursos y Autosuficiencia Los Chillos. El calendario se actualiza constantemente, ¡no te pierdas nada!</p>
             </div>
+
+            <div class="calendario-wrapper">
+                <iframe
+                    src="https://calendar.google.com/calendar/embed?src=REEMPLAZAR_CON_TU_CALENDAR_ID&ctz=America%2FGuayaquil"
+                    style="border: 0"
+                    width="100%"
+                    height="600"
+                    frameborder="0"
+                    scrolling="no"
+                    title="Calendario de eventos - Autosuficiencia Los Chillos">
+                </iframe>
+            </div>
+
+            <p class="nota-calendario" style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+                Si el calendario no se ve correctamente, puedes
+                <a href="#" id="link-calendario-externo" target="_blank" rel="noopener noreferrer" style="color: rgb(6, 147, 194);">
+                    abrirlo directamente en Google Calendar
+                </a>.
+            </p>
+
             <div style="margin-top: 30px;">
                 <a href="../index.html" class="btn">Volver a la página principal</a>
             </div>
@@ -89,7 +92,7 @@
                     <li><a href="empleo.html">Empleo</a></li>
                     <li><a href="educacion.html">Educación</a></li>
                     <li><a href="medicina.html">Medicina</a></li>
-                    <li><a href="emprender.html">Emprender</a></li>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
                     <li><a href="#">Grupo de Whatsapp</a></li>
                 </ul>
             </div>

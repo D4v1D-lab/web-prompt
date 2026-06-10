@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Voluntariado - Autosuficiencia Los Chillos">
+    <meta property="og:title" content="Voluntariado - Autosuficiencia Los Chillos">
+    <meta property="og:description" content="Formulario de voluntariado del Centro de Recursos y Autosuficiencia Los Chillos">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <script src="https://kit.fontawesome.com/034d3f2a55.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Kreon:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../js/scripts.js"></script>
+    <title>Voluntariado - Autosuficiencia Los Chillos</title>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h2 class="text-logo"><span>Autosuficiencia</span> Los Chillos </h2>
+        </div>
+        <i class="fa fa-bars menu-toggle"></i>
+        <ul class="nav">
+            <li><a href="../index.html">Página principal</a></li>
+            <li><a href="../index.html#noticias">Noticias</a></li>
+            <li><a href="contactos.html">Contactos</a></li>
+            <li><a href="#">Temas
+                    <i class="fa fa-chevron-down" style="font-size: 0.5em;"></i>
+                </a>
+                <ul>
+                    <li><a href="educacion.html" style="font-size: 0.75em;">Educación</a></li>
+                    <li><a href="empleo.html" style="font-size: 0.75em;">Empleo</a></li>
+                    <li><a href="contactos.html#ubicacion" style="font-size: 0.75em;">Horarios</a></li>
+                    <li><a href="medicina.html" style="font-size: 0.75em;">Medicina</a></li>
+                    <li><a href="testimonios.html" style="font-size: 0.75em;">Testimonios</a></li>
+                </ul>
+            </li>
+            <li><a href="eventos.html">Eventos</a></li>
+        </ul>
+    </header>
+
+    <div class="page-content" style="margin: 25px auto; padding: 20px;">
+        <div style="background: white; padding: 30px; border-radius: 5px; box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.5); min-height: 400px;">
+            <h1 style="color: rgb(6, 147, 194); font-family: 'Kreon'; font-size: 2em;">Voluntariado</h1>
+            <div style="border-bottom: 2px solid rgb(6, 147, 194); width: 80px; margin-bottom: 25px;"></div>
+            <div style="color: #333; line-height: 1.8; font-family: 'Josefin Sans', sans-serif;">
+                <p>El Centro de Recursos y Autosuficiencia Los Chillos funciona gracias al apoyo de voluntarios y misioneros de servicio. Si cuentas con tiempo, experiencia o conocimientos que puedan ayudar a la comunidad, ¡nos encantaría contar contigo!</p>
+                <p>Completa el siguiente formulario y nos pondremos en contacto contigo a la brevedad.</p>
+            </div>
+
+            <form action="https://formspree.io/f/FORM_ID_AQUI" method="POST" class="form-voluntariado" style="display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.5rem;">
+
+                <div class="campo" style="width: 100%;">
+                    <label for="nombre" style="display: block; font-weight: 600; margin-bottom: 0.35rem;">Nombre completo *</label>
+                    <input type="text" id="nombre" name="nombre" required style="width: 100%; padding: 0.6rem 0.75rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; font-family: inherit; box-sizing: border-box;">
+                </div>
+
+                <div class="campo" style="width: 100%;">
+                    <label for="telefono" style="display: block; font-weight: 600; margin-bottom: 0.35rem;">Teléfono / WhatsApp *</label>
+                    <input type="tel" id="telefono" name="telefono" required style="width: 100%; padding: 0.6rem 0.75rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; font-family: inherit; box-sizing: border-box;">
+                </div>
+
+                <div class="campo" style="width: 100%;">
+                    <label for="correo" style="display: block; font-weight: 600; margin-bottom: 0.35rem;">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo" style="width: 100%; padding: 0.6rem 0.75rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; font-family: inherit; box-sizing: border-box;">
+                </div>
+
+                <fieldset class="campo" style="border: 1px solid #ccc; border-radius: 6px; padding: 0.75rem 1rem; width: 100%; box-sizing: border-box;">
+                    <legend style="font-weight: 600; padding: 0 0.4rem;">¿En qué área te gustaría ayudar? *</legend>
+
+                    <label class="checkbox" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; margin-bottom: 0.4rem;">
+                        <input type="checkbox" name="areas" value="Educación"> Educación
+                    </label>
+                    <label class="checkbox" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; margin-bottom: 0.4rem;">
+                        <input type="checkbox" name="areas" value="Empleo"> Empleo
+                    </label>
+                    <label class="checkbox" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; margin-bottom: 0.4rem;">
+                        <input type="checkbox" name="areas" value="Emprendimiento"> Emprendimiento
+                    </label>
+                    <label class="checkbox" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; margin-bottom: 0.4rem;">
+                        <input type="checkbox" name="areas" value="Medicina"> Medicina
+                    </label>
+                    <label class="checkbox" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; margin-bottom: 0.4rem;">
+                        <input type="checkbox" name="areas" value="Eventos y logística"> Eventos y logística
+                    </label>
+                    <label class="checkbox" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; margin-bottom: 0.4rem;">
+                        <input type="checkbox" name="areas" value="Traducción"> Traducción
+                    </label>
+                    <label class="checkbox" style="display: flex; align-items: center; gap: 0.5rem; font-weight: 400; margin-bottom: 0.4rem;">
+                        <input type="checkbox" name="areas" value="Otro"> Otro
+                    </label>
+                </fieldset>
+
+                <div class="campo" style="width: 100%;">
+                    <label for="disponibilidad" style="display: block; font-weight: 600; margin-bottom: 0.35rem;">Disponibilidad (días y horarios)</label>
+                    <input type="text" id="disponibilidad" name="disponibilidad" placeholder="Ej: Domingos en la tarde" style="width: 100%; padding: 0.6rem 0.75rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; font-family: inherit; box-sizing: border-box;">
+                </div>
+
+                <div class="campo" style="width: 100%;">
+                    <label for="mensaje" style="display: block; font-weight: 600; margin-bottom: 0.35rem;">Cuéntanos un poco sobre ti o tu experiencia</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" style="width: 100%; padding: 0.6rem 0.75rem; border: 1px solid #ccc; border-radius: 6px; font-size: 1rem; font-family: inherit; box-sizing: border-box;"></textarea>
+                </div>
+
+                <input type="hidden" name="_subject" value="Nueva solicitud de voluntariado">
+
+                <button type="submit" class="btn" style="align-self: flex-start;">Enviar solicitud</button>
+            </form>
+
+            <p style="margin-top: 1.5rem; font-size: 0.85rem; color: #666;">
+                Tus datos solo se usarán para coordinar contigo sobre oportunidades de voluntariado en el centro.
+            </p>
+
+            <div style="margin-top: 30px;">
+                <a href="../index.html" class="btn">Volver a la página principal</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-content">
+            <div class="section about">
+                <h2 class="text-logo"><span>Autosuficiencia</span> Los Chillos </h2>
+                <p>Somos una organización sin fines de lucro que trabaja para la Iglesia de Jesucristo de Los Santos de Los Últimos Días. Este es un sitio no oficial de la iglesia hecho por miembros de la iglesia para ayudar a la comunidad</p>
+                <span><a href="https://wa.me/+593989448049" style="color: inherit; text-decoration: none;"><i class="fas fa-phone"></i></a> &nbsp;+593 989 448 049</span> <br>
+                <span><a href="mailto:centroserecursosloschillos@gmail.com" style="color: inherit; text-decoration: none;"><i class="fas fa-envelope"></i></a> &nbsp;centroserecursosloschillos@gmail.com</span> <br>
+                <span><i class="fab fa-facebook-f"></i> &nbsp;facebook.com/autosuficiencia.loschillos</span>
+            </div>
+            <div class="section links">
+                <h2>Quick links</h2>
+                <ul>
+                    <li><a href="quienes-somos.html">¿Quienes somos?</a></li>
+                    <li><a href="empleo.html">Empleo</a></li>
+                    <li><a href="educacion.html">Educación</a></li>
+                    <li><a href="medicina.html">Medicina</a></li>
+                    <li><a href="voluntariado.html">Voluntariado</a></li>
+                    <li><a href="#">Grupo de Whatsapp</a></li>
+                </ul>
+            </div>
+            <div class="section contact">
+                <h2>Subscríbete a nuestros boletines</h2>
+                <form action="../index.html" method="post">
+                    <input type="text" name="subs-term" class="text-input" placeholder="Correo electrónico..."> <br>
+                    <button type="submit" class="btn"><i class="fas fa-envelope" style="margin-right: 4px;"></i>Subscribirse</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; Centro de Recursos y Autosuficiencia Los Chillos | Diseñado por David Martínez - Todos los derechos reservados <span class="footer-year"></span>
+        </div>
+    </div>
+</body>
+
+</html>
