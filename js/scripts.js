@@ -4,6 +4,8 @@ $(document).ready(function () {
     $('.nav ul').toggleClass('showing');
   });
 
+  $('.footer-year').text(new Date().getFullYear());
+
   $('.section.contact form').on('submit', function (e) {
     e.preventDefault();
     var email = $(this).find('input[name="subs-term"]').val();
@@ -74,8 +76,13 @@ function renderCarousel(articulos) {
   });
 }
 
+function parseFecha(str) {
+  return new Date(str);
+}
+
 function renderRecentPosts(articulos, page) {
   var recientes = articulos.filter(function (a) { return !a.destacado; });
+  recientes.sort(function (a, b) { return parseFecha(b.fecha) - parseFecha(a.fecha); });
   var $recent = $('.main .recent');
   var perPage = 3;
 
@@ -164,6 +171,7 @@ function initSearch(articulos) {
       return a.titulo.toLowerCase().indexOf(query) !== -1 ||
              a.resumen.toLowerCase().indexOf(query) !== -1;
     });
+    matches.sort(function (a, b) { return parseFecha(b.fecha) - parseFecha(a.fecha); });
 
     matches.forEach(function (a) {
       var html = '<div class="recent-post clear">' +
