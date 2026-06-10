@@ -144,7 +144,7 @@ The `<span>` part is colored yellow via CSS (`.header .text-logo span` at line 1
 Contains: phone, email, Facebook link. Edit in all 9 files:
 ```html
 <span><a href="https://wa.me/+593989448049" style="color: inherit; text-decoration: none;"><i class="fas fa-phone"></i></a> +593 989 448 049</span>
-<span><a href="mailto:centroserecursosloschillos@gmail.com" style="color: inherit; text-decoration: none;"><i class="fas fa-envelope"></i></a> centroserecursosloschillos@gmail.com</span>
+<span><a href="mailto:centroderecursosloschillos@gmail.com" style="color: inherit; text-decoration: none;"><i class="fas fa-envelope"></i></a> centroderecursosloschillos@gmail.com</span>
 <span><i class="fab fa-facebook-f"></i> facebook.com/autosuficiencia.loschillos</span>
 ```
 

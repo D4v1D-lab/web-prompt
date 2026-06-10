@@ -14,7 +14,7 @@ steps:
     value: "+593 989 448 049"
   - action: to_contain_text
     target: .footer
-    value: centroserecursosloschillos@gmail.com
+    value: centroderecursosloschillos@gmail.com
   - action: to_contain_text
     target: .footer
     value: facebook.com/autosuficiencia.loschillos
