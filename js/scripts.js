@@ -222,7 +222,7 @@ function renderArticle(articulos) {
     '<div style="color: #333; line-height: 1.8; font-family: \'Josefin Sans\', sans-serif;">' + articulo.contenido + '</div>' +
     (articulo.informacion ? '<div style="margin-top: 25px; padding: 15px; background: #f0f8fb; border-left: 4px solid rgb(6, 147, 194); border-radius: 3px; font-family: \'Josefin Sans\', sans-serif;">' +
       '<i class="fas fa-external-link-alt" style="color: rgb(6, 147, 194); margin-right: 8px;"></i>' +
-      '<strong style="color: rgb(6, 147, 194);">Para más información:</strong> ' +
+      '<strong style="color: rgb(6, 147, 194);">' + (articulo.info_label || 'Para más información') + ':</strong> ' +
       '<a href="' + articulo.informacion + '" target="_blank" rel="noopener" style="color: rgb(6, 147, 194); word-break: break-all;">' + articulo.informacion + '</a>' +
     '</div>' : '') +
     '<div class="share-section">' +

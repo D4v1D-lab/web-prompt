@@ -121,6 +121,7 @@
     "imagen": "images/secap-charla.jpg",
     "categoria": "empleo",
     "destacado": true,
-    "informacion": "https://churchofjesuschrist.zoom.us/j/94747207778?pwd=PZTSkZFuUMdUowT7VthawMTlhLOsPn.1"
+    "informacion": "https://churchofjesuschrist.zoom.us/j/94747207778?pwd=PZTSkZFuUMdUowT7VthawMTlhLOsPn.1",
+    "info_label": "Link de la reunión"
   }
 ]

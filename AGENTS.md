@@ -52,7 +52,8 @@ Static HTML/CSS/JS website. Content is driven by `data/articulos.json` loaded cl
 | `fecha` | string | Spanish abbreviation: Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic. Format: `"Jun 7, 2026"` |
 | `imagen` | string | Must reference a real file in `images/`. Never use external URLs. |
 | `destacado` | boolean | `true` = carousel. `false` = recent posts. **Default for new articles: `true`** (carousel). Only set `false` if the user explicitly asks to NOT feature it. |
-| `informacion` | string | Optional. If present, renders a blue-left-border "Para más información" box at the bottom of the article page. |
+| `informacion` | string | Optional. If present, renders a blue-left-border box at the bottom of the article page. |
+| `info_label` | string | Optional. Label text for the info box (default: "Para más información"). Use this when a specific article needs a different label (e.g. "Link de la reunión"). |
 
 ---
 
