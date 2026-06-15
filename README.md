@@ -10,7 +10,7 @@
 - **GitHub Personal Access Token** — with repo read/write permissions ([Settings → Developer settings → Personal access tokens → Fine-grained tokens](https://github.com/settings/tokens))
 - **AWS account** — for Amplify hosting (free tier works)
 - **Python 3** — for local preview (`python3 -m http.server`)
-- **Node.js + npm** — for QA tests (`qa-use` CLI)
+- **Node.js + npm** — for running the test suite
 
 ---
 
@@ -79,6 +79,16 @@ Then share the token with the agent so it can clone, edit, commit, and push on y
 │   ├── responsive.yaml
 │   └── run.py              # Interactive test runner
 ├── AGENTS.md               # Instructions for AI agents
+├── playwright.config.ts    # Playwright test configuration
+├── tests/                  # E2E test suite (Playwright + TypeScript)
+│   ├── smoke.spec.ts
+│   ├── navigation.spec.ts
+│   ├── carousel.spec.ts
+│   ├── recent-posts.spec.ts
+│   ├── search.spec.ts
+│   ├── share-buttons.spec.ts
+│   ├── footer.spec.ts
+│   └── responsive.spec.ts
 └── README.md
 ```
 
@@ -168,75 +178,54 @@ Open `http://localhost:3000/index.html`. The site requires a server (`file://` w
 
 ---
 
-## QA Testing
+## Tests
 
-E2E browser tests powered by [`qa-use`](https://desplega.ai). Test definitions are in `qa-tests/*.yaml`.
+E2E test suite using Playwright + TypeScript, following the selector stability methodology from Anexo-C-S3.
+
+### Selector priority (most → least stable)
+
+| Rank | Type | Example |
+|---|---|---|
+| 1 | `data-testid` | `[data-testid="carousel"]` |
+| 2 | ID | `#article-content`, `#ubicacion` |
+| 3 | Semantic attribute | `input[name="search-term"]`, `img[alt="..."]` |
+| 4 | Specific class | `.share-btn.whatsapp`, `.footer` |
+| 5 | Hierarchy | `.main .recent .post-preview a` (fragile) |
 
 ### Installation
 
 ```bash
-sudo apt update && sudo apt install nodejs npm -y
-npm install -g @desplega.ai/qa-use
-qa-use install-deps
+npm install
+npx playwright install chromium
 ```
 
-Export your API key (add to `~/.bashrc` to make it permanent):
+### Run tests
+
+**Local** — start the preview server first:
 
 ```bash
-export QA_USE_API_KEY=sk_qfm_98ec9c584f3d46cd8b69a385fdab9b25
+python3 -m http.server 3000
+npx playwright test
 ```
 
-### Interactive runner (recommended)
+**Against the live site:**
 
 ```bash
-python3 qa-tests/run.py
+BASE_URL=https://main.dl11nb8ahrd81.amplifyapp.com npx playwright test
 ```
 
-Pick a test category, individual tests, or run all from the menu.
+### Test scenarios
 
-### Direct CLI
-
-Run a single test:
-
-```bash
-qa-use test run qa-tests/smoke.yaml
-```
-
-Run all tests:
-
-```bash
-qa-use test run qa-tests/smoke.yaml && \
-qa-use test run qa-tests/navigation.yaml && \
-qa-use test run qa-tests/footer.yaml && \
-qa-use test run qa-tests/carousel.yaml && \
-qa-use test run qa-tests/search.yaml && \
-qa-use test run qa-tests/newsletter.yaml && \
-qa-use test run qa-tests/responsive.yaml
-```
-
-### Test file format
-
-```yaml
-name: Test Name
-description: What it validates
-tags:
-  - category
-  - priority
-variables:
-  key: value
-steps:
-  - action: goto
-    url: ...
-  - action: click
-    target: ...
-  - action: fill
-    target: ...
-    value: $var
-  - action: to_be_visible
-    target: ...
-```
-
-Available actions: `goto`, `click`, `fill`, `type`, `press`, `check`, `uncheck`, `select`, `to_be_visible`, `to_be_hidden`, `to_have_text`, `to_have_value`, `wait`, `wait_for_url`, `reload`, `back`, `forward`, `ai_action`, `ai_assertion`.
+| File | What it validates |
+|---|---|
+| `smoke.spec.ts` | Page loads, header, nav, footer render |
+| `navigation.spec.ts` | Nav links navigate to correct pages |
+| `carousel.spec.ts` | Carousel slides render and autoplay |
+| `recent-posts.spec.ts` | Recent posts section loads with articles |
+| `search.spec.ts` | Search filters results, empty state |
+| `share-buttons.spec.ts` | Share buttons render on article page |
+| `footer.spec.ts` | Contact info, quick links, newsletter form |
+| `responsive.spec.ts` | Layout adapts at breakpoints |
 
 ---
 

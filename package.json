@@ -1,0 +1,27 @@
+{
+  "name": "autosuficiencia",
+  "version": "1.0.0",
+  "description": "**AI-managed static website.** Content is driven by `data/articulos.json` and auto-deploys via AWS Amplify on every `git push`. An AI agent reads `AGENTS.md`, manages articles, images, and layout — no manual editing required.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:live": "BASE_URL=https://main.dl11nb8ahrd81.amplifyapp.com npx playwright test",
+    "test:ui": "npx playwright test --ui"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/D4v1D-lab/web-prompt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/D4v1D-lab/web-prompt/issues"
+  },
+  "homepage": "https://github.com/D4v1D-lab/web-prompt#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.61.0",
+    "playwright": "^1.61.0",
+    "typescript": "^6.0.3"
+  }
+}
