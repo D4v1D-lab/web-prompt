@@ -135,5 +135,15 @@
     "destacado": true,
     "informacion": "https://churchofjesuschrist-my.sharepoint.com/:v:/g/personal/espinosaea_churchofjesuschrist_org/IQAlshBi7Rm8SaVg7fcy6mIfAWyRvrfZpl67129iatRX-So?e=krSlkx",
     "info_label": "Ver grabación de la charla"
+  },
+  {
+    "id": 14,
+    "titulo": "Especialista de Autosuficiencia de Barrio",
+    "fecha": "Jun 15, 2026",
+    "resumen": "Responsabilidades del especialista de autosuficiencia: grupos, empleo, educación, emprendimiento y seguimiento.",
+    "contenido": "<p>El <strong>especialista de autosuficiencia de barrio</strong> es llamado por el obispo para ayudar a los miembros a volverse autosuficientes en lo espiritual y temporal. Estas son sus responsabilidades principales:</p><h3>Con el obispo</h3><ul><li>Ayudar a identificar necesidades de autosuficiencia entre los miembros del barrio</li><li>Informar regularmente al obispado sobre el progreso del programa</li><li>Coordinar con el obispo derivaciones a <strong>Servicios para la Familia</strong> cuando se necesite apoyo profesional en salud mental</li></ul><h3>Grupos de Autosuficiencia</h3><ul><li>Organizar y facilitar los grupos de autosuficiencia enfocados en educación, empleo y emprendimiento</li><li>Asegurar que los grupos se reúnan semanalmente durante <strong>12 semanas</strong> usando los manuales oficiales de la Iglesia</li><li>Hacer seguimiento a los participantes después de completar el grupo</li></ul><h3>Capacitación y recursos</h3><ul><li>Capacitar a facilitadores de grupos</li><li>Promover los recursos disponibles: <strong>BYU–Pathway Worldwide</strong>, <strong>Fondo Perpetuo para la Educación (FPE)</strong>, certificaciones SECAP, becas gubernamentales, etc.</li><li>Coordinar con el centro de recursos de estaca</li></ul><h3>Apoyo directo</h3><ul><li>Visitar y animar a miembros que estén buscando empleo o emprendiendo</li><li>Ayudar a los miembros a establecer metas de autosuficiencia y crear un plan de acción</li><li>Conectar a los miembros con oportunidades de educación y empleo en la comunidad</li></ul><h3>Registro</h3><ul><li>Llevar registro de los grupos y participantes</li><li>Reportar al obispado y al especialista de autosuficiencia de estaca</li></ul><p>El especialista es el <strong>brazo operativo del obispo</strong> para todo lo relacionado con la autosuficiencia de los miembros: trabajo, educación, emprendimiento y administración de los recursos temporales. Su labor es clave para cumplir el propósito de la Iglesia de ayudar a los hijos de Dios a proveer para sí mismos y para sus familias.</p><p>📖 <em>Manual General, Sección 22.8</em></p>",
+    "imagen": "images/especialista-autosuficiencia.jpg",
+    "categoria": "empleo",
+    "destacado": false
   }
 ]
