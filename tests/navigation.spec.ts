@@ -21,10 +21,10 @@ test.describe('navigation', () => {
 
   test('Temas dropdown contains all section links', async ({ page }) => {
     await page.goto('/index.html');
-    const temas = page.getByRole('link', { name: 'Temas' });
+    const temas = page.locator('header .nav li:has-text("Temas")');
     await temas.hover();
-    await expect(page.getByRole('link', { name: 'Educación' })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Empleo' })).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Horarios' })).toBeVisible();
+    await expect(page.locator('header .nav a:text("Educación")')).toBeVisible();
+    await expect(page.locator('header .nav a:text("Empleo")')).toBeVisible();
+    await expect(page.locator('header .nav a:text("Horarios")')).toBeVisible();
   });
 });

@@ -7,7 +7,7 @@ import { test, expect } from '@playwright/test';
 
 test('page loads with header, nav and footer', async ({ page }) => {
   await page.goto('/index.html');
-  await expect(page.locator('.text-logo')).toBeVisible();
+  await expect(page.locator('header .text-logo')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Página principal' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Noticias' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Contactos' })).toBeVisible();
