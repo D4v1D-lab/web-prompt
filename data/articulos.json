@@ -113,6 +113,18 @@
     "informacion": "https://pusak.fomentoacademico.gob.ec"
   },
   {
+    "id": 13,
+    "titulo": "PIA: Inmersión a la Autosuficiencia",
+    "fecha": "Jun 15, 2026",
+    "resumen": "Programa de la Iglesia que prepara a misioneros retornados en educación, empleo y emprendimiento. +60% aprueba Pathway.",
+    "contenido": "<p>El <strong>Programa de Inmersión a la Autosuficiencia (PIA)</strong> es una iniciativa del Área Sudamérica Noroeste de La Iglesia de Jesucristo de los Santos de los Últimos Días que prepara a misioneros retornados para su transición exitosa a la vida civil.</p><p>Es un taller intensivo de <strong>2 días</strong> enfocado en tres ejes clave:</p><ul><li><strong>🎓 Educación</strong> — Orientación vocacional, acceso a BYU–Pathway Worldwide y preparación para exámenes de admisión.</li><li><strong>💼 Empleo</strong> — Marketing personal, creación de currículums, preparación para entrevistas y traducción de habilidades misionales al ámbito laboral.</li><li><strong>🚀 Emprendimiento</strong> — Desarrollo de proyectos empresariales mediante herramientas como &quot;Business in a Box&quot; y la Academia para la Creación de Empresas.</li></ul><p>Los resultados son notables: más del <strong>60% de los participantes</strong> lograron aprobar el examen de Pathway Connect, y varios recibieron ofertas de trabajo al finalizar el taller.</p><p>El programa se lanzó en junio de 2024 en Ecuador y, tras su éxito, se expandió a <strong>Perú, Colombia, Bolivia y Venezuela</strong>. Los talleres se realizan cada pocas semanas, coordinados con los regresos de los misioneros.</p><p>Participan representantes de los Servicios de Bienestar y Autosuficiencia de la Iglesia, empresarios locales e instituciones educativas que presentan oportunidades de empleabilidad, emprendimiento y educación.</p><p>Mauricio Ampudia, Gerente de Bienestar y Autosuficiencia, lidera esta iniciativa que está transformando la vida de cientos de jóvenes en Sudamérica.</p>",
+    "imagen": "images/pia-programa.jpg",
+    "categoria": "empleo",
+    "destacado": true,
+    "informacion": "https://es.thechurchnews.com/fe-viva/2024/09/03/misioneros-retornados-talleres-para-mejorar-autosuficiencia-sudamerica/",
+    "info_label": "Leer artículo completo en Church News"
+  },
+  {
     "id": 12,
     "titulo": "Certificación profesional gratuita SECAP",
     "fecha": "Jun 14, 2026",
