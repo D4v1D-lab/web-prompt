@@ -123,6 +123,13 @@ header * {
     min-height: 100%;
     max-width: 85%;
     margin: 0 auto;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.page-content li {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .page-content a:hover{
