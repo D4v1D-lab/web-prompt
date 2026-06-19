@@ -115,18 +115,6 @@
     "informacion": "https://pusak.fomentoacademico.gob.ec"
   },
   {
-    "id": 13,
-    "titulo": "PIA: Inmersión a la Autosuficiencia",
-    "fecha": "Jun 15, 2026",
-    "resumen": "Programa de la Iglesia que prepara a misioneros retornados en educación, empleo y emprendimiento. +60% aprueba Pathway.",
-    "contenido": "<p>El <strong>Programa de Inmersión a la Autosuficiencia (PIA)</strong> es una iniciativa del Área Sudamérica Noroeste de La Iglesia de Jesucristo de los Santos de los Últimos Días que prepara a misioneros retornados para su transición exitosa a la vida civil.</p><p>Es un taller intensivo de <strong>2 días</strong> enfocado en tres ejes clave:</p><ul><li><strong>🎓 Educación</strong> — Orientación vocacional, acceso a BYU–Pathway Worldwide y preparación para exámenes de admisión.</li><li><strong>💼 Empleo</strong> — Marketing personal, creación de currículums, preparación para entrevistas y traducción de habilidades misionales al ámbito laboral.</li><li><strong>🚀 Emprendimiento</strong> — Desarrollo de proyectos empresariales mediante herramientas como &quot;Business in a Box&quot; y la Academia para la Creación de Empresas.</li></ul><p>Los resultados son notables: más del <strong>60% de los participantes</strong> lograron aprobar el examen de Pathway Connect, y varios recibieron ofertas de trabajo al finalizar el taller.</p><p>El programa se lanzó en junio de 2024 en Ecuador y, tras su éxito, se expandió a <strong>Perú, Colombia, Bolivia y Venezuela</strong>. Los talleres se realizan cada pocas semanas, coordinados con los regresos de los misioneros.</p><p>Participan representantes de los Servicios de Bienestar y Autosuficiencia de la Iglesia, empresarios locales e instituciones educativas que presentan oportunidades de empleabilidad, emprendimiento y educación.</p><p>Mauricio Ampudia, Gerente de Bienestar y Autosuficiencia, lidera esta iniciativa que está transformando la vida de cientos de jóvenes en Sudamérica.</p>",
-    "imagen": "images/pia-programa.jpg",
-    "categoria": "empleo",
-    "destacado": true,
-    "informacion": "https://es.thechurchnews.com/fe-viva/2024/09/03/misioneros-retornados-talleres-para-mejorar-autosuficiencia-sudamerica/",
-    "info_label": "Leer artículo completo en Church News"
-  },
-  {
     "id": 12,
     "titulo": "SECAP: Certificación profesional gratuita",
     "fecha": "Jun 15, 2026",
@@ -137,6 +125,18 @@
     "destacado": true,
     "informacion": "https://churchofjesuschrist-my.sharepoint.com/:v:/g/personal/espinosaea_churchofjesuschrist_org/IQAlshBi7Rm8SaVg7fcy6mIfAWyRvrfZpl67129iatRX-So?e=krSlkx",
     "info_label": "Ver grabación de la charla"
+  },
+  {
+    "id": 13,
+    "titulo": "PIA: Inmersión a la Autosuficiencia",
+    "fecha": "Jun 15, 2026",
+    "resumen": "Programa de la Iglesia que prepara a misioneros retornados en educación, empleo y emprendimiento. +60% aprueba Pathway.",
+    "contenido": "<p>El <strong>Programa de Inmersión a la Autosuficiencia (PIA)</strong> es una iniciativa del Área Sudamérica Noroeste de La Iglesia de Jesucristo de los Santos de los Últimos Días que prepara a misioneros retornados para su transición exitosa a la vida civil.</p><p>Es un taller intensivo de <strong>2 días</strong> enfocado en tres ejes clave:</p><ul><li><strong>🎓 Educación</strong> — Orientación vocacional, acceso a BYU–Pathway Worldwide y preparación para exámenes de admisión.</li><li><strong>💼 Empleo</strong> — Marketing personal, creación de currículums, preparación para entrevistas y traducción de habilidades misionales al ámbito laboral.</li><li><strong>🚀 Emprendimiento</strong> — Desarrollo de proyectos empresariales mediante herramientas como &quot;Business in a Box&quot; y la Academia para la Creación de Empresas.</li></ul><p>Los resultados son notables: más del <strong>60% de los participantes</strong> lograron aprobar el examen de Pathway Connect, y varios recibieron ofertas de trabajo al finalizar el taller.</p><p>El programa se lanzó en junio de 2024 en Ecuador y, tras su éxito, se expandió a <strong>Perú, Colombia, Bolivia y Venezuela</strong>. Los talleres se realizan cada pocas semanas, coordinados con los regresos de los misioneros.</p><p>Participan representantes de los Servicios de Bienestar y Autosuficiencia de la Iglesia, empresarios locales e instituciones educativas que presentan oportunidades de empleabilidad, emprendimiento y educación.</p><p>Mauricio Ampudia, Gerente de Bienestar y Autosuficiencia, lidera esta iniciativa que está transformando la vida de cientos de jóvenes en Sudamérica.</p>",
+    "imagen": "images/pia-programa.jpg",
+    "categoria": "empleo",
+    "destacado": true,
+    "informacion": "https://es.thechurchnews.com/fe-viva/2024/09/03/misioneros-retornados-talleres-para-mejorar-autosuficiencia-sudamerica/",
+    "info_label": "Leer artículo completo en Church News"
   },
   {
     "id": 14,
@@ -159,5 +159,17 @@
     "destacado": true,
     "informacion": "https://jovenesenaccion.desarrollohumano.gob.ec/landing",
     "info_label": "Inscríbete aquí"
+  },
+  {
+    "id": 16,
+    "titulo": "SECAP: Certificaciones disponibles",
+    "fecha": "Jun 19, 2026",
+    "resumen": "Todas las certificaciones por competencias laborales que ofrece SECAP: comercio, construcción, comunicación, textil, gastronomía y más. Avaladas por el Ministerio de Trabajo.",
+    "contenido": "<p>El <strong>Servicio Ecuatoriano de Capacitación Profesional (SECAP)</strong> ofrece la <strong>Certificación por Competencias Laborales</strong>, un reconocimiento oficial que valida tus conocimientos y experiencia laboral, sin importar si tienes o no un título académico. Está avalada por el <strong>Ministerio de Trabajo</strong> y registrada en <strong>Senescyt</strong>.</p><p>La certificación evalúa lo que ya sabes hacer mediante pruebas teóricas y prácticas. No requiere haber tomado cursos previos, solo experiencia comprobable en la actividad.</p><h3>Requisitos generales</h3><ul><li><strong>Educación:</strong> Educación básica aprobada (la mayoría) o bachillerato (algunos perfiles)</li><li><strong>Experiencia:</strong> 1 a 3 años comprobables en la actividad</li><li><strong>Documentos:</strong> Certificados laborales, facturas, RUC/RUP/RIMPE, contratos o declaración juramentada</li></ul><hr><h3>Comercio y Ventas</h3><ul><li>Comercio Minorista</li><li>Organización de Perchas para la Venta</li><li>Venta y Despacho de Productos</li></ul><h3>Comunicación</h3><ul><li>Locutor de Radio</li><li>Presentador de Televisión</li><li>Camarógrafo</li><li>Fotógrafo de Medios y Multimedia</li><li>Productor de Audio</li><li>Productor y Realizador de Contenidos para Medios Comunitarios (Radio y TV)</li><li>Analista y Programador de Contenidos</li></ul><h3>Construcción</h3><ul><li>Armado de Estructuras de Hormigón</li><li>Hormigonado de Elementos Estructurales</li><li>Levantamiento de Mampostería</li><li>Enlucido de Superficies</li><li>Carpintero</li><li>Instalación de Paredes y Techos Falsos</li><li>Pintura en Edificaciones</li><li>Revestimiento Húmedo</li><li>Operario en Mantenimiento (Electricidad / Limpieza)</li><li>Asistencia a Supervisión de Actividades de Construcción</li></ul><h3>Textil y Confección</h3><ul><li>Confección de Camisas, Camisetas, Faldas y Pantalones</li><li>Acabados de Prendas de Vestir</li><li>Extendido, Trazado y Corte de Prendas</li></ul><h3>Gastronomía y Alimentos</h3><ul><li>Asistencia de Preparaciones Gastronómicas en Panadería y Pastelería</li><li>Asistencia en Cocina (varios perfiles)</li></ul><h3>Mecánica e Industrial</h3><ul><li>Mecánica Automotriz</li><li>Mecánica Industrial y Minería</li><li>Procesos Industriales</li><li>Buenas Prácticas en Instalación y Mantenimiento de Sistemas de Refrigeración y Aire Acondicionado</li></ul><h3>Servicios y Oficina</h3><ul><li>Asistencia en Gestión Documental y Archivo</li><li>Atención Integral en Centros de Desarrollo Infantil</li><li>Apicultor Básico</li><li>Actividades de Extensionismo Rural (requiere título universitario)</li></ul><h3>Tecnología</h3><ul><li>Soporte Técnico en TI</li><li>Programación de Sistemas Informáticos</li></ul><hr><h3>Proceso de certificación</h3><ol><li>Ingresa al portal SECAP y selecciona el perfil de certificación de tu interés</li><li>Revisa los requisitos específicos del esquema</li><li>Presenta los documentos que acrediten tu experiencia</li><li>Rinde las pruebas teóricas y prácticas</li><li>Recibe tu certificado avalado por el Ministerio de Trabajo</li></ol>",
+    "imagen": "images/secap-logo.jpg",
+    "categoria": "empleo",
+    "destacado": false,
+    "informacion": "https://www.secap.gob.ec/certificacion-por-competencias-laborales/",
+    "info_label": "Portal oficial SECAP - Certificaciones"
   }
 ]
