@@ -103,7 +103,7 @@ function renderRecentPosts(articulos, page) {
       '<a href="single.html?id=' + a.id + '" class="btn" style="margin-left: 5px;">Leer mas...</a>' +
       '<div class="share-section small">' +
         '<span class="share-label">Compartir:</span>' +
-        '<a href="https://api.whatsapp.com/send?text=' + encodeURIComponent(a.titulo + ' - ' + window.location.origin + '/single.html?id=' + a.id) + '" target="_blank" rel="noopener" class="share-btn whatsapp" title="Compartir en WhatsApp"><i class="fab fa-whatsapp"></i></a>' +
+        '<a href="https://wa.me/?text=' + encodeURIComponent(a.titulo + ' - ' + window.location.origin + '/single.html?id=' + a.id) + '" target="_blank" rel="noopener" class="share-btn whatsapp" title="Compartir en WhatsApp"><i class="fab fa-whatsapp"></i></a>' +
         '<a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.origin + '/single.html?id=' + a.id) + '" target="_blank" rel="noopener" class="share-btn facebook" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>' +
         '<button class="share-btn link" title="Copiar enlace" onclick="copiarEnlace(this, \'' + window.location.origin + '/single.html?id=' + a.id + '\')"><i class="fas fa-link"></i></button>' +
       '</div>' +
@@ -183,7 +183,7 @@ function initSearch(articulos) {
         '<a href="single.html?id=' + a.id + '" class="btn" style="margin-left: 5px;">Leer mas...</a>' +
         '<div class="share-section small">' +
           '<span class="share-label">Compartir:</span>' +
-          '<a href="https://api.whatsapp.com/send?text=' + encodeURIComponent(a.titulo + ' - ' + window.location.origin + '/single.html?id=' + a.id) + '" target="_blank" rel="noopener" class="share-btn whatsapp" title="Compartir en WhatsApp"><i class="fab fa-whatsapp"></i></a>' +
+          '<a href="https://wa.me/?text=' + encodeURIComponent(a.titulo + ' - ' + window.location.origin + '/single.html?id=' + a.id) + '" target="_blank" rel="noopener" class="share-btn whatsapp" title="Compartir en WhatsApp"><i class="fab fa-whatsapp"></i></a>' +
           '<a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.origin + '/single.html?id=' + a.id) + '" target="_blank" rel="noopener" class="share-btn facebook" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>' +
           '<button class="share-btn link" title="Copiar enlace" onclick="copiarEnlace(this, \'' + window.location.origin + '/single.html?id=' + a.id + '\')"><i class="fas fa-link"></i></button>' +
         '</div>' +
@@ -227,7 +227,7 @@ function renderArticle(articulos) {
     '</div>' : '') +
     '<div class="share-section">' +
       '<span class="share-label">Compartir:</span>' +
-      '<a href="https://api.whatsapp.com/send?text=' + encodeURIComponent(articulo.titulo + ' - ' + window.location.href) + '" target="_blank" rel="noopener" class="share-btn whatsapp" title="Compartir en WhatsApp"><i class="fab fa-whatsapp"></i></a>' +
+      '<a href="https://wa.me/?text=' + encodeURIComponent(articulo.titulo + ' - ' + window.location.href) + '" target="_blank" rel="noopener" class="share-btn whatsapp" title="Compartir en WhatsApp"><i class="fab fa-whatsapp"></i></a>' +
       '<a href="https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(window.location.href) + '" target="_blank" rel="noopener" class="share-btn facebook" title="Compartir en Facebook"><i class="fab fa-facebook-f"></i></a>' +
       '<button class="share-btn link" title="Copiar enlace" onclick="copiarEnlace(this)"><i class="fas fa-link"></i></button>' +
     '</div>' +
