@@ -445,7 +445,7 @@ color: rgb(6, 147, 194);
     top: 0;
     left: 0;
     z-index: 3;
-    background: rgb(6, 147, 194);
+    background: #000;
     text-align: center;
 }
 
@@ -464,7 +464,7 @@ color: rgb(6, 147, 194);
     z-index: 2;
     -webkit-transform: rotate(-10deg) translate(7px, 8px);
     transform: rotate(-10deg) translate(7px, 8px);
-    background: rgb(243, 243, 92);
+    background: rgb(254, 254, 220);
     color: #333;
 }
 
