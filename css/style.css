@@ -100,20 +100,33 @@ header ul li ul {
     position: absolute;
     padding: 0px;
     top: 35px;
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
 }
 
 header ul li:hover ul {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
 header ul li ul li {
     width: 100%;
     text-align: left;
     background: rgb(6, 147, 194);
-
     margin: 0px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.12s ease, transform 0.12s ease;
 }
+
+header ul li:hover ul li:nth-child(1) { transition-delay: 0s; opacity: 1; transform: translateY(0); }
+header ul li:hover ul li:nth-child(2) { transition-delay: 0.05s; opacity: 1; transform: translateY(0); }
+header ul li:hover ul li:nth-child(3) { transition-delay: 0.10s; opacity: 1; transform: translateY(0); }
+header ul li:hover ul li:nth-child(4) { transition-delay: 0.15s; opacity: 1; transform: translateY(0); }
+header ul li:hover ul li:nth-child(5) { transition-delay: 0.20s; opacity: 1; transform: translateY(0); }
 
 header .text-logo span {
     color: rgb(243, 243, 92);
@@ -793,13 +806,18 @@ color: rgb(6, 147, 194);
     header ul li ul {
         position: static;
         display: block;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
     }
 
     header ul li ul li {
         font: 0.85em;
         width: 100%;
         display: block;
-        
+        opacity: 1;
+        transform: none;
+        transition: none;
     }
     header ul li:hover ul {
         display: block;
