@@ -445,7 +445,7 @@ color: rgb(6, 147, 194);
     top: 0;
     left: 0;
     z-index: 3;
-    background: #000;
+    background: rgb(254, 254, 220);
     text-align: center;
 }
 
@@ -464,8 +464,8 @@ color: rgb(6, 147, 194);
     z-index: 2;
     -webkit-transform: rotate(-10deg) translate(7px, 8px);
     transform: rotate(-10deg) translate(7px, 8px);
-    background: rgb(254, 254, 220);
-    color: #333;
+    background: #000;
+    color: #fff;
 }
 
 .outer:hover .inner {
