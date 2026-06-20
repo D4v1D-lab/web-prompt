@@ -446,6 +446,7 @@ color: rgb(6, 147, 194);
     left: 0;
     z-index: 3;
     background: rgb(254, 254, 220);
+    color: #333;
     text-align: center;
 }
 
