@@ -6,6 +6,26 @@ $(document).ready(function () {
 
   $('.footer-year').text(new Date().getFullYear());
 
+  var monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+  if ($('.widget-calendar').length) {
+    var newDate = new Date();
+    setInterval(function () {
+      var now = new Date();
+      var hours = now.getHours();
+      var minutes = now.getMinutes();
+      var seconds = now.getSeconds();
+      $('.hour span').text((hours < 10 ? '0' : '') + hours);
+      $('.minute span').text((minutes < 10 ? '0' : '') + minutes);
+      $('.second span').text((seconds < 10 ? '0' : '') + seconds);
+      $('.month span, .month2 span').text(monthNames[newDate.getMonth()]);
+      $('.date span, .date2 span').text(newDate.getDate());
+      $('.day span, .day2 span').text(dayNames[newDate.getDay()]);
+      $('.year span').html(newDate.getFullYear());
+    }, 1000);
+  }
+
   $('.section.contact form').on('submit', function (e) {
     e.preventDefault();
     var email = $(this).find('input[name="subs-term"]').val();
