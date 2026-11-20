@@ -35,7 +35,7 @@ $(document).ready(function () {
     }
   });
 
-  $.getJSON('/data/articulos.json', function (articulos) {
+  $.getJSON('data/articulos.json', function (articulos) {
     if ($('.posts').length) {
       renderCarousel(articulos);
       renderRecentPosts(articulos, 1);
