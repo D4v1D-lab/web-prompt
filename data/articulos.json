@@ -92,9 +92,10 @@
     "imagen": "images/FP.png",
     "categoria": "educacion",
     "destacado": true,
-    "informacion": "documents/catalogo-fpe.pdf",
-    "info_label": "Descargar catalogo completo de carreras (PDF)",
-    "info_label": "Si tienes más preguntas ve aquí"
+    "enlaces": [
+      { "url": "documents/catalogo-fpe.pdf", "label": "Descargar catálogo completo de carreras (PDF)" },
+      { "url": "documents/preguntas-frecuentes-fpe.pdf", "label": "Preguntas frecuentes del FPE (PDF)" }
+    ]
   },
   {
     "id": 10,
