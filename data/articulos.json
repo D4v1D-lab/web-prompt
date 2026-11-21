@@ -93,7 +93,8 @@
     "categoria": "educacion",
     "destacado": true,
     "informacion": "documents/catalogo-fpe.pdf",
-    "info_label": "Descargar catalogo completo de carreras (PDF)"
+    "info_label": "Descargar catalogo completo de carreras (PDF)",
+    "info_label": "Si tienes más preguntas ve aquí"
   },
   {
     "id": 10,
